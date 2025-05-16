@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.nekoniiistudio.et.supportkit": {
+      "version": "file:com.nekoniiistudio.et.supportkit",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.2d.animation": {
       "version": "10.1.4",
       "depth": 1,

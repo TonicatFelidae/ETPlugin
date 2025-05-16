@@ -1,0 +1,11 @@
+{
+  "name": "com.nekoniiistudio.et.supportkit",
+  "version": "1.0.20",
+  "displayName": "ET Support Kit",
+  "description": "ET support utilities for runtime use.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "type": "library"
+}
