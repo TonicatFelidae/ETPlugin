@@ -1,0 +1,2 @@
+ET addressable asset
+

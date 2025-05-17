@@ -1,0 +1,11 @@
+{
+  "name": "com.nekoniiistudio.et.uikit",
+  "version": "1.1.0",
+  "displayName": "ET UI Kit",
+  "description": "ET UI utilities for runtime use.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "type": "library"
+}

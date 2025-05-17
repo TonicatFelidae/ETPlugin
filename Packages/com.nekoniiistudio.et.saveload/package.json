@@ -1,0 +1,11 @@
+{
+  "name": "com.nekoniiistudio.et.saveload",
+  "version": "1.1.250517",
+  "displayName": "ET Saveload",
+  "description": "ET saveload.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "type": "library"
+}

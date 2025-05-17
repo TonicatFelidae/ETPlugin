@@ -1,0 +1,11 @@
+{
+  "name": "com.nekoniiistudio.et.addressableassetkit",
+  "version": "1.0.0",
+  "displayName": "ET Addressable Asset Kit",
+  "description": "ET Addressable Asset Kit.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "type": "library"
+}
