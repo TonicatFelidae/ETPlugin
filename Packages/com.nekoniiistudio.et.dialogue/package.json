@@ -1,0 +1,11 @@
+{
+  "name": "com.nekoniiistudio.et.dialogue",
+  "version": "1.0.5",
+  "displayName": "ET Dialogue",
+  "description": "ET Dialogue for runtime use.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "type": "library"
+}

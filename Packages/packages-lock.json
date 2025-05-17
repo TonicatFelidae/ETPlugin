@@ -6,6 +6,24 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "com.nekoniiistudio.et.dialogue": {
+      "version": "file:com.nekoniiistudio.et.dialogue",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.nekoniiistudio.et.engine": {
+      "version": "file:com.nekoniiistudio.et.engine",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.nekoniiistudio.et.inputmanager": {
+      "version": "file:com.nekoniiistudio.et.inputmanager",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.nekoniiistudio.et.saveload": {
       "version": "file:com.nekoniiistudio.et.saveload",
       "depth": 0,
@@ -20,6 +38,12 @@
     },
     "com.nekoniiistudio.et.uikit": {
       "version": "file:com.nekoniiistudio.et.uikit",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
+    "com.nekoniiistudio.et.versioncontrol": {
+      "version": "file:com.nekoniiistudio.et.versioncontrol",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}

@@ -1,0 +1,11 @@
+{
+  "name": "com.nekoniiistudio.et.inputmanager",
+  "version": "1.0.0",
+  "displayName": "ET Input Manager",
+  "description": "ET Input Manager for runtime use.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "type": "library"
+}

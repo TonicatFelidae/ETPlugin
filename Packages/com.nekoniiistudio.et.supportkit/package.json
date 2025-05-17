@@ -1,6 +1,6 @@
 {
   "name": "com.nekoniiistudio.et.supportkit",
-  "version": "1.29.0",
+  "version": "1.29.1",
   "displayName": "ET Support Kit",
   "description": "ET support utilities for runtime use.",
   "unity": "2022.3",
