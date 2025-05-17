@@ -1,6 +1,6 @@
 ## ET Plugin Packages
 
-You can install these Unity packages using Git URLs with the Unity Package Manager:
+These are ET plugins:
 
 - **ET SupportKit**  
   [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.supportkit#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.supportkit#main)
@@ -13,3 +13,15 @@ You can install these Unity packages using Git URLs with the Unity Package Manag
 
 - **ET SaveLoad**  
   [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.saveload#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.saveload#main)
+
+- **ET Version control**  
+  [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.versioncontrol#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.versioncontrol#main)
+
+- **ET Input Manager**  
+  [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.inputmanager#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.inputmanager#main)
+
+- **ET Engine**  
+  [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.engine#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.engine#main)
+
+- **ET Dialogue**  
+  [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.dialogue#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.dialogue#main)
