@@ -1,6 +1,6 @@
 {
   "name": "com.nekoniiistudio.et.engine",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "displayName": "ET Engine",
   "description": "ET Engine base on zenject for runtime use.",
   "unity": "2022.3",
