@@ -1,8 +1,11 @@
 {
-    "name": "Game",
+    "name": "ETEngine",
     "rootNamespace": "",
     "references": [
-        "GUID:2341f1a3bba3bc64794065d270ad7fde"
+        "Zenject",
+        "UniTask",
+        "Unity.TextMeshPro",
+        "ETSupportKit"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
