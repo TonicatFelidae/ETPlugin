@@ -1,5 +1,5 @@
 {
-  "name": "com.nekoniiistudio.et.etresourceloader",
+  "name": "com.nekoniiistudio.et.resourceloader",
   "version": "1.0.0",
   "displayName": "ET Resource Loader",  
   "description": "ET Resource Loader capable of load resource and addressable.",
