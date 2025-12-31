@@ -1,0 +1,11 @@
+{
+  "name": "com.nekoniiistudio.et.etresourceloader",
+  "version": "1.0.0",
+  "displayName": "ET Resource Loader",  
+  "description": "ET Resource Loader capable of load resource and addressable.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "type": "library"
+}
