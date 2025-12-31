@@ -1,0 +1,16 @@
+{
+    "name": "ETToggle",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0967fe6833d384940a722f76c6b2768b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

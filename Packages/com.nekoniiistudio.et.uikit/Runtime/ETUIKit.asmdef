@@ -1,0 +1,18 @@
+{
+    "name": "ETUIKit",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:0967fe6833d384940a722f76c6b2768b",
+        "GUID:3cec182ce4ca4da48a82c8ab9a37623a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

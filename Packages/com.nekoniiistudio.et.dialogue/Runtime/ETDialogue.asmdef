@@ -1,0 +1,17 @@
+{
+    "name": "ETDialogue",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0967fe6833d384940a722f76c6b2768b",
+        "GUID:c27de8b2a4b6c6547b063073cb26c0e3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
