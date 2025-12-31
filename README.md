@@ -8,8 +8,8 @@ These are ET plugins:
 - **ET uiKit**  
   [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.uikit#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.uikit#main)
 
-- **ET AddressableAssetKit**  
-  [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.addressableassetkit#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.addressableassetkit#main)
+- **ET ResourceLoader**  
+  [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.resourceloader#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.resourceloader#main)
 
 - **ET SaveLoad**  
   [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.saveload#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.saveload#main)
