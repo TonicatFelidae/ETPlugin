@@ -5,7 +5,7 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using Object = UnityEngine.Object;
 
-namespace ETEngine.ResourceManagement
+namespace ET.ResourceManagement
 {
     public class AddressableAssetLoader : IAssetLoader
     {

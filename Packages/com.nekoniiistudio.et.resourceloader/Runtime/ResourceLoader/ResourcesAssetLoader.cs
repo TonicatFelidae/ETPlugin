@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace ETEngine.ResourceManagement
+namespace ET.ResourceManagement
 {
     public sealed class ResourcesAssetLoader : IAssetLoader
     {

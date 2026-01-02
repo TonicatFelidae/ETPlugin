@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using UnityEngine;
 
-namespace ETEngine.ResourceManagement
+namespace ET.ResourceManagement
 {
     public interface IAssetLoader
     {

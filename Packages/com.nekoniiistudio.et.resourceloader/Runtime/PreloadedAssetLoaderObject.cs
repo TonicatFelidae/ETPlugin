@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace ETEngine.ResourceManagement
+namespace ET.ResourceManagement
 {
     [CreateAssetMenu(fileName = "PreloadedAssetLoader", menuName = "Resource Loader/Preloaded Asset Loader")]
     public sealed class PreloadedAssetLoaderObject : AssetLoaderObject, IAssetLoader

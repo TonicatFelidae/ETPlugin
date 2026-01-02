@@ -1,4 +1,4 @@
-namespace ETEngine.ResourceManagement
+namespace ET.ResourceManagement
 {
     public enum AssetLoadStatus
     {

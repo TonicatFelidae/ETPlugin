@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Object = UnityEngine.Object;
 
-namespace ETEngine.ResourceManagement
+namespace ET.ResourceManagement
 {
     public abstract class AssetLoadHandle
     {

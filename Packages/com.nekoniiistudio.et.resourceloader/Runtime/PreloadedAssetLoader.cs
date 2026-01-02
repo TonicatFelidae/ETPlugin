@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Object = UnityEngine.Object;
 
-namespace ETEngine.ResourceManagement
+namespace ET.ResourceManagement
 {
     /// <summary>
     ///     <see cref="IAssetLoader" /> that allows you to register preloaded assets.

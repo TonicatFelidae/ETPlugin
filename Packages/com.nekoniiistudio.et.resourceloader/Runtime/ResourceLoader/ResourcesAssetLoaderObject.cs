@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ETEngine.ResourceManagement
+namespace ET.ResourceManagement
 {
     [CreateAssetMenu(fileName = "ResourcesAssetLoader", menuName = "Resource Loader/Resources Asset Loader")]
     public sealed class ResourcesAssetLoaderObject : AssetLoaderObject, IAssetLoader

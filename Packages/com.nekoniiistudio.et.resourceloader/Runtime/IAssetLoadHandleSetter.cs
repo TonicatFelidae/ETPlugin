@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace ETEngine.ResourceManagement
+namespace ET.ResourceManagement
 {
     public interface IAssetLoadHandleSetter<T>
     {
