@@ -15,7 +15,7 @@ namespace ET
             {
                 retList.Add(obj);
             }).WaitForCompletion();
-            return default;
+            return Task.FromResult(retList);
         }
         //Clean current assetlist then reload asset
         public static Task<IList<T>> ReLoadAssetsByKey<T>(this IList<T> retList, string key)
@@ -25,7 +25,7 @@ namespace ET
             {
                 retList.Add(obj);
             }).WaitForCompletion();
-            return default;
+            return  Task.FromResult(retList);
         }
         //TO DO not make enough webgl app to create some thing like this
         #region case web GL
