@@ -25,3 +25,6 @@ These are ET plugins:
 
 - **ET Dialogue**  
   [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.dialogue#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.dialogue#main)
+
+- **ET DevTools**  
+  [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/ETDevTools#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/ETDevTools#main)
