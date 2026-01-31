@@ -13,21 +13,9 @@ public class ShifterBar : MonoBehaviour
     {
         _oriWitdh = oriImage.rect.x; 
     }
-    [SerializeField]
     public void OnSliderBarMove(float curValue)
     {
         float newWitdh = curValue* _oriWitdh;
         mask.rect.Set(mask.rect.x, mask.rect.y, newWitdh, mask.rect.height); 
-    }
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
