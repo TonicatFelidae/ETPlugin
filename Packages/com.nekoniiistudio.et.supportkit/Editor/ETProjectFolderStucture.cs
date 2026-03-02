@@ -40,13 +40,13 @@ namespace ET
             CreateAssemblyDefinition(Path.Combine(assetsPath, "Game", "___Script___"), "Game");
             string scriptPath = Path.Combine(assetsPath, "Game", "___Script___");
             CreateFolder(scriptPath, "Animation");
-            CreateFolder(scriptPath, "Container");
             CreateFolder(scriptPath, "Data");
             CreateFolder(scriptPath, "Debug");
             CreateFolder(scriptPath, "DevSP");
             CreateFolder(scriptPath, "Editor");
             CreateFolder(scriptPath, "Events");
             CreateFolder(scriptPath, "Gameplay");
+            CreateFolder(scriptPath, "Installer");
             CreateFolder(scriptPath, "OOG");
             CreateFolder(scriptPath, "Objects");
             CreateFolder(scriptPath, "Services");
