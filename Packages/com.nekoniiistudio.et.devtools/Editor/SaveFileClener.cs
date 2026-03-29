@@ -12,7 +12,8 @@ public class SaveFileClener : Editor
         string persistentPath = Application.persistentDataPath;
         if (Directory.Exists(persistentPath))
         {
-            string[] files = Directory.GetFiles(persistentPath);
+            // Delete all files
+            string[] files = Directory.GetFiles(persistentPath, "*", SearchOption.AllDirectories);
             foreach (string file in files)
             {
                 try
@@ -24,7 +25,22 @@ public class SaveFileClener : Editor
                     Debug.LogError($"Failed to delete file: {file}\n{ex}");
                 }
             }
-            Debug.Log("All files in persistent data path deleted.");
+
+            // Delete all directories
+            string[] directories = Directory.GetDirectories(persistentPath, "*", SearchOption.AllDirectories);
+            foreach (string dir in directories)
+            {
+                try
+                {
+                    Directory.Delete(dir, true);
+                }
+                catch (IOException ex)
+                {
+                    Debug.LogError($"Failed to delete directory: {dir}\n{ex}");
+                }
+            }
+
+            Debug.Log("All files and folders in persistent data path deleted.");
         }
         else
         {

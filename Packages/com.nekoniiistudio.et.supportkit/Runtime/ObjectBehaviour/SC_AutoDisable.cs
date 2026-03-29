@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 /// <summary>
 /// Auto destroy after set of time
@@ -8,13 +9,19 @@ using UnityEngine;
 public class SC_AutoDisable : MonoBehaviour
 {
     public float time;
-    public void Start()
+    public float _time;
+    public UnityEvent onEnableEvent { get; set; } = new();
+    public UnityEvent onDisableEvent { get; set; } = new();
+    public void OnEnable()
     {
-        if (time <= 0) TouchDisable();  
+        _time = time;
+        onEnableEvent.Invoke();
+        if (time <= 0) TouchDisable();
     }
     public void Update()
     {
-        if (time > 0 ) {
+        if (time > 0)
+        {
             time -= Time.deltaTime;
         }
         else
@@ -24,6 +31,7 @@ public class SC_AutoDisable : MonoBehaviour
     }
     public void TouchDisable()
     {
-        gameObject .SetActive(false);
+        gameObject.SetActive(false);
+        onDisableEvent.Invoke();
     }
 }

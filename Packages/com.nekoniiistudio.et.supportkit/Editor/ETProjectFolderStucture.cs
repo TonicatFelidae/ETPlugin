@@ -2,12 +2,12 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace  ET
+namespace ET
 {
-public class ETProjectFolderStucture : EditorWindow
-{
-    [MenuItem("ETools/Project structure")]
-    public static void ShowWindow()
+    public class ETProjectFolderStucture : EditorWindow
+    {
+        [MenuItem("ETools/Project structure")]
+        public static void ShowWindow()
         {
             GetWindow<ETProjectFolderStucture>("Project structure");
         }
@@ -26,6 +26,9 @@ public class ETProjectFolderStucture : EditorWindow
             string assetsPath = Application.dataPath;
             CreateFolder(assetsPath, "Game");
             CreateFolder(Path.Combine(assetsPath, "Game"), "___Animation___");
+            string animationPath = Path.Combine(assetsPath, "Game", "___Animation___");
+            CreateFolder(animationPath, "Animator");
+            CreateFolder(animationPath, "Animation");
             CreateFolder(Path.Combine(assetsPath, "Game"), "___Art___");
             CreateFolder(Path.Combine(assetsPath, "Game"), "___Data___");
             CreateFolder(Path.Combine(assetsPath, "Game"), "___Font___");
@@ -35,8 +38,27 @@ public class ETProjectFolderStucture : EditorWindow
             // Scripts folder
             CreateFolder(Path.Combine(assetsPath, "Game"), "___Script___");
             CreateAssemblyDefinition(Path.Combine(assetsPath, "Game", "___Script___"), "Game");
+            string scriptPath = Path.Combine(assetsPath, "Game", "___Script___");
+            CreateFolder(scriptPath, "Animation");
+            CreateFolder(scriptPath, "Data");
+            CreateFolder(scriptPath, "Debug");
+            CreateFolder(scriptPath, "DevSP");
+            CreateFolder(scriptPath, "Editor");
+            CreateFolder(scriptPath, "Events");
+            CreateFolder(scriptPath, "Gameplay");
+            CreateFolder(scriptPath, "Installer");
+            CreateFolder(scriptPath, "OOG");
+            CreateFolder(scriptPath, "Objects");
+            CreateFolder(scriptPath, "Services");
+            CreateFolder(scriptPath, "System");
+            CreateFolder(scriptPath, "UI");
             //
             CreateFolder(Path.Combine(assetsPath, "Game"), "___Sound___");
+            string soundPath = Path.Combine(assetsPath, "Game", "___Sound___");
+            CreateFolder(soundPath, "AB");
+            CreateFolder(soundPath, "BG");
+            CreateFolder(soundPath, "EF");
+            CreateFolder(soundPath, "UI");
             CreateFolder(Path.Combine(assetsPath, "Game"), "___Texture___");
             CreateFolder(Path.Combine(assetsPath, "Game"), "___Tile___");
             CreateFolder(assetsPath, "StreamingAssets");
@@ -102,5 +124,5 @@ public class ETProjectFolderStucture : EditorWindow
             Debug.Log($"Created asmdef: {asmdefPath}");
         }
     }
-    
+
 }
