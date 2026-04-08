@@ -1,8 +1,8 @@
 {
-    "name": "ETSupportKit",
+    "name": "ETSupportKitEditor",
     "rootNamespace": "",
     "references": [
-        "UnityEngine.UI"
+        "ETSupportKit"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
