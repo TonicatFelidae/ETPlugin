@@ -99,10 +99,11 @@ namespace ET.PowerStruct
         public int Count => items?.Length ?? 0;
 
         private List<T> _cachedList;
+        private Dictionary<string, T> _cachedDict;
 
-        private void InvalidateCache() => _cachedList = null;
+        private void InvalidateCache() { _cachedList = null; _cachedDict = null; }
 
-        public List<T> ToList()
+        public List<T> GetList()
         {
             if (_cachedList == null)
             {
@@ -114,6 +115,24 @@ namespace ET.PowerStruct
                 }
             }
             return _cachedList;
+        }
+        public Dictionary<string, T> GetDictionary()
+        {
+            if (!typeof(IIDItem).IsAssignableFrom(typeof(T)))
+            {
+                Debug.LogError($"GetDictionary requires T to implement IIDItem, but T is {typeof(T).Name}");
+                return null;
+            }
+            if (_cachedDict == null)
+            {
+                _cachedDict = new Dictionary<string, T>(items?.Length ?? 0);
+                if (items != null)
+                {
+                    foreach (var item in items)
+                        _cachedDict[((IIDItem)item.item).ID] = item.item;
+                }
+            }
+            return _cachedDict;
         }
     }
     [Serializable]
