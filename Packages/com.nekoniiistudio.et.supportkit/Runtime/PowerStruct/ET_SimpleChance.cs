@@ -23,7 +23,7 @@ namespace ET.PowerStruct
             }
             if (total == 0)
             {
-                if(isAllZero)
+                if (isAllZero)
                 {
                     float startChance = 0;
                     float chance = 1 / (float)total;
@@ -43,7 +43,7 @@ namespace ET.PowerStruct
                     items[i].chanceInPercent.x = startChance;
                     items[i].chanceInPercent.y = startChance + chance;
                     startChance += chance;
-                } 
+                }
             }
             initialized = true;
         }
@@ -62,7 +62,7 @@ namespace ET.PowerStruct
         public T GetRandom()
         {
             if (!initialized) Init();
-            float random = UnityEngine.Random.Range(0f,1f);
+            float random = UnityEngine.Random.Range(0f, 1f);
             foreach (var item in items)
             {
                 if (random.IsBetweenRange(item.chanceInPercent.x, item.chanceInPercent.y))
@@ -91,6 +91,29 @@ namespace ET.PowerStruct
                 items[i] = new SimpleChanceItem<T>(values[i], chance[i]);
             }
             Init();
+            InvalidateCache();
+        }
+        /// <summary>
+        /// Gets the count of items in the group.
+        /// </summary>
+        public int Count => items?.Length ?? 0;
+
+        private List<T> _cachedList;
+
+        private void InvalidateCache() => _cachedList = null;
+
+        public List<T> ToList()
+        {
+            if (_cachedList == null)
+            {
+                _cachedList = new List<T>(items?.Length ?? 0);
+                if (items != null)
+                {
+                    foreach (var item in items)
+                        _cachedList.Add(item.item);
+                }
+            }
+            return _cachedList;
         }
     }
     [Serializable]
