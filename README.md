@@ -28,3 +28,5 @@ These are ET plugins:
 
 - **ET DevTools**  
   [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.devtools#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.devtools#main)
+- **ET Simplegamekit**  
+  [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.simplegamekit#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.simplegamekit#main)
