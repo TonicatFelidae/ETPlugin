@@ -1,5 +1,5 @@
 {
-    "name": "ETEngine",
+    "name": "OldETEngine",
     "rootNamespace": "",
     "references": [
         "Zenject",
