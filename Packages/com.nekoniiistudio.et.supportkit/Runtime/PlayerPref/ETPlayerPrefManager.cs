@@ -8,7 +8,7 @@ namespace ET.ETPlayerPref
     /// ETPlayerPrefManager use to manager simple playerPref value, for more advance, should consider other system
     /// </summary>
     [Serializable]
-    public class ETPlayerPrefManager: MonoBehaviour
+    public class ETPlayerPrefManager : MonoBehaviour
     {
         public List<PlayerPrefInt> intKeys;
         public List<PlayerPrefFloat> floatKeys;
@@ -17,6 +17,7 @@ namespace ET.ETPlayerPref
         public bool runInitAtAwake = true;
         private void Awake()
         {
+            DontDestroyOnLoad(this);
             if (runInitAtAwake) Init();
         }
         public int Count
@@ -38,7 +39,7 @@ namespace ET.ETPlayerPref
             int count = 0;
             foreach (PlayerPrefInt item in intKeys)
             {
-                count += ET_PlayerPref.TrySetInt(item.key, item.value)? 1:0;
+                count += ET_PlayerPref.TrySetInt(item.key, item.value) ? 1 : 0;
             }
             foreach (PlayerPrefFloat item in floatKeys)
             {
@@ -53,14 +54,14 @@ namespace ET.ETPlayerPref
         public void DeleteAllKeys()
         {
             PlayerPrefs.DeleteAll();
-            intKeys = new ();
-            floatKeys = new ();
-            stringKeys = new ();
+            intKeys = new();
+            floatKeys = new();
+            stringKeys = new();
             Debug.Log($"[ETPlayerPrefManager] Deleted All Keys");
         }
         public void ResetToDefaultValue()
         {
-            foreach (PlayerPrefInt item in intKeys) 
+            foreach (PlayerPrefInt item in intKeys)
             {
                 PlayerPrefs.SetInt(item.key, item.value);
             }
@@ -78,7 +79,7 @@ namespace ET.ETPlayerPref
     [Serializable]
     public struct PlayerPrefInt
     {
-        public string key; 
+        public string key;
         public int value;
 
         public PlayerPrefInt(string key, int value)
