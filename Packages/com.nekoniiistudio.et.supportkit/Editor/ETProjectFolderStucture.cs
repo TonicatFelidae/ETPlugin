@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace ET
 {
+#if UNITY_EDITOR
     public class ETProjectFolderStucture : EditorWindow
     {
         [MenuItem("ETools/Project structure")]
@@ -124,5 +125,5 @@ namespace ET
             Debug.Log($"Created asmdef: {asmdefPath}");
         }
     }
-
+#endif
 }
