@@ -2,9 +2,9 @@
     "name": "ETMobileKit",
     "rootNamespace": "",
     "references": [
-        "GUID:ac145e6b8c6034cdbadc8c6e26aedbcf",
-        "GUID:1e8e55397bd004beaba78a667566665f",
-        "GUID:9d6c7830d9ab746a7a12f144bdeeee7c"
+        "Unity.Notifications.Android",
+        "Unity.Notifications.iOS",
+        "Unity.Services.RemoteConfig"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,6 +1,6 @@
 {
   "name": "com.nekoniiistudio.et.mobilekit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "ET Mobile Kit",
   "description": "ET mobile utilities for runtime use.",
   "unity": "2022.3",

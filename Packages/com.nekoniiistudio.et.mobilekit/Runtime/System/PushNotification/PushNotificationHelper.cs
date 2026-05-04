@@ -1,8 +1,8 @@
-/*
+
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Ser.RemoteConfig;
+using Unity.Services.RemoteConfig;
 using Zenject;
 using ET;
 
@@ -13,19 +13,30 @@ using Unity.Notifications.iOS;
 #if UNITY_ANDROID
 using Unity.Notifications.Android;
 #endif
-namespace ET.System
+namespace ET.NotificationSystem
 {
 
     public class PushNotificationHelper
     {
 
-        private const int D7InactivityHours = 24 * 7;
-        public const string DefaultD7ReminderMessage = "🎁今すぐ200ポイントGET！";
+        private PushNotificationData _data;
+        private Func<int, string> _customMessegerFunc;
         private const string D7NotificationIntentData = "D7_NOTIFICATION";
+        private const string D14NotificationIntentData = "D14_NOTIFICATION";
+        private const string D30NotificationIntentData = "D30_NOTIFICATION";
 #if UNITY_IOS
-    private const string D7NotificationUserInfoKey = "d7_notification";
+        private const string D7NotificationUserInfoKey = "d7_notification";
+        private const string D14NotificationUserInfoKey = "d14_notification";
+        private const string D30NotificationUserInfoKey = "d30_notification";
 #endif
-
+        /// <summary>   
+        /// customMesseger Method(int hoursFromNow) will be called when generating message for each notification item. If it returns null, the default message in notification item will be used.
+        /// </summary>
+        public void Init(PushNotificationData pushNotificationData, Func<int, string> customMesseger = null)
+        {
+            _data = pushNotificationData;
+            _customMessegerFunc = customMesseger;
+        }
         public void ScheduleLocalPush(bool includeD7Reminder)
         {
             Debug.Log("Start schedule notification!");
@@ -33,6 +44,12 @@ namespace ET.System
             int d7Ab = RemoteConfigService.Instance.appConfig.GetInt("AB_d7incentive_reward_push", 0);
             bool enableD7PushByAb = d7Ab == 1;
             bool shouldScheduleD7 = enableD7PushByAb && includeD7Reminder;
+            int d14Ab = RemoteConfigService.Instance.appConfig.GetInt("AB_d14incentive_reward_push", 0);
+            bool enableD14PushByAb = d14Ab == 1;
+            bool shouldScheduleD14 = enableD14PushByAb && includeD7Reminder;
+            int d30Ab = RemoteConfigService.Instance.appConfig.GetInt("AB_d30incentive_reward_push", 0);
+            bool enableD30PushByAb = d30Ab == 1;
+            bool shouldScheduleD30 = enableD30PushByAb && includeD7Reminder;
 #endif
 #if UNITY_ANDROID
             var channel = new AndroidNotificationChannel()
@@ -46,10 +63,12 @@ namespace ET.System
             AndroidNotificationCenter.RegisterNotificationChannel(channel);
 
             var scheduledNotifications = new List<AndroidNotification>();
-            for (int i = 0; i < Data.notificationItems.Length; i++)
+            for (int i = 0; i < _data.notificationItems.Length; i++)
             {
-                var noffItem = Data.notificationItems[i];
-                if (shouldScheduleD7 && IsD7NotificationItem(noffItem))
+                var noffItem = _data.notificationItems[i];
+                if ((shouldScheduleD7 && IsD7NotificationItem(noffItem)) ||
+                    (shouldScheduleD14 && IsD14NotificationItem(noffItem)) ||
+                    (shouldScheduleD30 && IsD30NotificationItem(noffItem)))
                 {
                     continue;
                 }
@@ -60,39 +79,75 @@ namespace ET.System
 
             if (shouldScheduleD7)
             {
-                var message = DefaultD7ReminderMessage;
-                var notification = ScheduleAndroidNotification(message, D7InactivityHours, D7NotificationIntentData);
+                var message = _data.defaultD7ReminderMessage;
+                var notification = ScheduleAndroidNotification(message, _data.D7InactivityHours, D7NotificationIntentData);
+                scheduledNotifications.Add(notification);
+            }
+
+            if (shouldScheduleD14)
+            {
+                var message = _data.defaultD7ReminderMessage;
+                var notification = ScheduleAndroidNotification(message, _data.D14InactivityHours, D14NotificationIntentData);
+                scheduledNotifications.Add(notification);
+            }
+
+            if (shouldScheduleD30)
+            {
+                var message = _data.defaultD7ReminderMessage;
+                var notification = ScheduleAndroidNotification(message, _data.D30InactivityHours, D30NotificationIntentData);
                 scheduledNotifications.Add(notification);
             }
 
             LogReservedNotifications(scheduledNotifications);
 #elif UNITY_IOS
-        iOSNotificationCenter.RemoveAllScheduledNotifications();
-        iOSNotificationCenter.RemoveAllDeliveredNotifications();
-        iOSNotificationCenter.ApplicationBadge = 0;
-        var scheduledNotifications = new List<iOSNotification>();
-        for (int i = 0; i < Data.notificationItems.Length; i++)
-        {
-            var noffItem = Data.notificationItems[i];
-            if (shouldScheduleD7 && IsD7NotificationItem(noffItem))
+            iOSNotificationCenter.RemoveAllScheduledNotifications();
+            iOSNotificationCenter.RemoveAllDeliveredNotifications();
+            iOSNotificationCenter.ApplicationBadge = 0;
+            var scheduledNotifications = new List<iOSNotification>();
+            for (int i = 0; i < _data.notificationItems.Length; i++)
             {
-                continue;
+                var noffItem = _data.notificationItems[i];
+                if ((shouldScheduleD7 && IsD7NotificationItem(noffItem)) ||
+                    (shouldScheduleD14 && IsD14NotificationItem(noffItem)) ||
+                    (shouldScheduleD30 && IsD30NotificationItem(noffItem)))
+                {
+                    continue;
+                }
+                var message = GetMessage(noffItem.messeger, noffItem.timeInHour);
+                var notification = ScheduleiOSNotification(message, noffItem.timeInHour);
+                scheduledNotifications.Add(notification);
             }
-            var message = GetMessage(noffItem.messeger, noffItem.timeInHour);
-            var notification = ScheduleiOSNotification(message, noffItem.timeInHour);
-            scheduledNotifications.Add(notification);
-        }
-        if (shouldScheduleD7)
-        {
-            var message = DefaultD7ReminderMessage;
-            var userInfo = new Dictionary<string, string>
+            if (shouldScheduleD7)
+            {
+                var message = _data.defaultD7ReminderMessage;
+                var userInfo = new Dictionary<string, string>
             {
                 { D7NotificationUserInfoKey, "1" }
             };
-            var notification = ScheduleiOSNotification(message, D7InactivityHours, userInfo);
-            scheduledNotifications.Add(notification);
-        }
-        LogReservedNotifications(scheduledNotifications);
+                var notification = ScheduleiOSNotification(message, _data.D7InactivityHours, userInfo);
+                scheduledNotifications.Add(notification);
+            }
+            if (shouldScheduleD14)
+            {
+                var message = _data.defaultD7ReminderMessage;
+                var userInfo = new Dictionary<string, string>
+            {
+                { D14NotificationUserInfoKey, "1" }
+            };
+                var notification = ScheduleiOSNotification(message, _data.D14InactivityHours, userInfo);
+                scheduledNotifications.Add(notification);
+            }
+            if (shouldScheduleD30)
+            {
+                var message = _data.defaultD7ReminderMessage;
+                var userInfo = new Dictionary<string, string>
+            {
+                { D30NotificationUserInfoKey, "1" }
+            };
+                var notification = ScheduleiOSNotification(message, _data.D30InactivityHours, userInfo);
+                scheduledNotifications.Add(notification);
+            }
+            LogReservedNotifications(scheduledNotifications);
 #else
             _ = includeD7Reminder;
 #endif
@@ -114,7 +169,7 @@ namespace ET.System
             var notification = new AndroidNotification
             {
                 Title = "にゃんこをさがそう！",
-                Text = DefaultD7ReminderMessage,
+                Text = _data.defaultD7ReminderMessage,
                 SmallIcon = "icon_small",
                 LargeIcon = "icon_large",
                 FireTime = DateTime.Now.AddSeconds(seconds)
@@ -122,25 +177,25 @@ namespace ET.System
             notification.IntentData = D7NotificationIntentData;
             AndroidNotificationCenter.SendNotification(notification, "findthecat_notification");
 #elif UNITY_IOS
-        var timeTrigger = new iOSNotificationTimeIntervalTrigger
-        {
-            TimeInterval = TimeSpan.FromSeconds(seconds),
-            Repeats = false
-        };
+            var timeTrigger = new iOSNotificationTimeIntervalTrigger
+            {
+                TimeInterval = TimeSpan.FromSeconds(seconds),
+                Repeats = false
+            };
 
-        var userInfo = new Dictionary<string, string>
+            var userInfo = new Dictionary<string, string>
         {
             { D7NotificationUserInfoKey, "1" }
         };
-        var notification = CreateiOSNotificationWithUserInfo(
-            $"findthecat_debug_notify_{DateTime.Now.Ticks}",
-            "にゃんこをさがせ",
-            DefaultD7ReminderMessage,
-            timeTrigger,
-            userInfo
-        );
+            var notification = CreateiOSNotificationWithUserInfo(
+                $"findthecat_debug_notify_{DateTime.Now.Ticks}",
+                "にゃんこをさがせ",
+                _data.defaultD7ReminderMessage,
+                timeTrigger,
+                userInfo
+            );
 
-        iOSNotificationCenter.ScheduleNotification(notification);
+            iOSNotificationCenter.ScheduleNotification(notification);
 #else
             Debug.Log($"ScheduleDebugD7Reminder invoked with {seconds}s but notifications unsupported on this platform.");
 #endif
@@ -148,47 +203,27 @@ namespace ET.System
 
         private string GetMessage(string defaultMessage, int hoursFromNow)
         {
-            if (_gameDat.dailyRewardDats == null)
+            string customMesseger = _customMessegerFunc?.Invoke(hoursFromNow);
+            if (!string.IsNullOrEmpty(customMesseger))
             {
-                return defaultMessage;
+                return customMesseger;
             }
-
-            var jstNow = DateTime.UtcNow.AddHours(9);
-            var jstTarget = jstNow.AddHours(hoursFromNow);
-            var dayDiff = (jstTarget.Date - jstNow.Date).Days;
-
-            MissionState targetState;
-            if (dayDiff == 0 || dayDiff == 1)
-            {
-                targetState = MissionState.Locked;
-            }
-            else
-            {
-                return defaultMessage;
-            }
-
-            for (int i = 0; i < _gameDat.dailyRewardDats.Count; i++)
-            {
-                var dat = _gameDat.dailyRewardDats[i];
-                if (dat.state == targetState)
-                {
-                    if (dat.rewardItemKind == 0)
-                    {
-                        return $"今日ログインしないと{dat.rewardAmount}ポイントを失います";
-                    }
-                    else
-                    {
-                        return $"今日ログインしないと{dat.rewardAmount}枚のチケットを失います";
-                    }
-                }
-            }
-
             return defaultMessage;
+
+        }
+        private bool IsD7NotificationItem(PostGameNotificationItem item)
+        {
+            return item.timeInHour == _data.D7InactivityHours;
         }
 
-        private static bool IsD7NotificationItem(PostGameNotificationItem item)
+        private bool IsD14NotificationItem(PostGameNotificationItem item)
         {
-            return item.timeInHour == D7InactivityHours;
+            return item.timeInHour == _data.D14InactivityHours;
+        }
+
+        private bool IsD30NotificationItem(PostGameNotificationItem item)
+        {
+            return item.timeInHour == _data.D30InactivityHours;
         }
 
         public bool TryConsumeD7NotificationActivation()
@@ -205,14 +240,14 @@ namespace ET.System
                 }
             }
 #elif UNITY_IOS
-        var lastNotification = iOSNotificationCenter.GetLastRespondedNotification();
-        if (lastNotification != null && lastNotification.UserInfo != null &&
-            lastNotification.UserInfo.TryGetValue(D7NotificationUserInfoKey, out var value) && value == "1")
-        {
-            iOSNotificationCenter.RemoveDeliveredNotification(lastNotification.Identifier);
-            iOSNotificationCenter.RemoveScheduledNotification(lastNotification.Identifier);
-            return true;
-        }
+            var lastNotification = iOSNotificationCenter.GetLastRespondedNotification();
+            if (lastNotification != null && lastNotification.UserInfo != null &&
+                lastNotification.UserInfo.TryGetValue(D7NotificationUserInfoKey, out var value) && value == "1")
+            {
+                iOSNotificationCenter.RemoveDeliveredNotification(lastNotification.Identifier);
+                iOSNotificationCenter.RemoveScheduledNotification(lastNotification.Identifier);
+                return true;
+            }
 #endif
             return false;
         }
@@ -227,13 +262,13 @@ namespace ET.System
             }
         }
 #elif UNITY_IOS
-    private void LogReservedNotifications(List<iOSNotification> notifications)
-    {
-        foreach (var n in notifications)
+        private void LogReservedNotifications(List<iOSNotification> notifications)
         {
-            Debug.Log($"Reserved notification: {n.Identifier} - {n.Body}");
+            foreach (var n in notifications)
+            {
+                Debug.Log($"Reserved notification: {n.Identifier} - {n.Body}");
+            }
         }
-    }
 #endif
 
 #if UNITY_ANDROID
@@ -258,70 +293,69 @@ namespace ET.System
 #endif
 
 #if UNITY_IOS
-    static iOSNotification CreateiOSNotificationWithUserInfo(
-        string identifier,
-        string title,
-        string body,
-        iOSNotificationTimeIntervalTrigger trigger,
-        Dictionary<string, string> userInfo)
-    {
-        var notification = new iOSNotification
+        static iOSNotification CreateiOSNotificationWithUserInfo(
+            string identifier,
+            string title,
+            string body,
+            iOSNotificationTimeIntervalTrigger trigger,
+            Dictionary<string, string> userInfo)
         {
-            Identifier = identifier,
-            Title = title,
-            Body = body,
-            ShowInForeground = true,
-            ForegroundPresentationOption = (PresentationOption.Alert | PresentationOption.Sound),
-            CategoryIdentifier = "findthecat_reminder",
-            ThreadIdentifier = "findthecat_reminder_thread",
-            Trigger = trigger
-        };
-
-        // Work around read-only UserInfo by using reflection to set the property
-        if (userInfo != null && userInfo.Count > 0)
-        {
-            var userInfoProperty = typeof(iOSNotification).GetProperty("UserInfo");
-            if (userInfoProperty != null && userInfoProperty.CanWrite)
+            var notification = new iOSNotification
             {
-                userInfoProperty.SetValue(notification, userInfo);
-            }
-        }
-
-        return notification;
-    }
-
-    static iOSNotification ScheduleiOSNotification(string message, int hoursFromNow, Dictionary<string, string> userInfo = null)
-    {
-        var timeTrigger = new iOSNotificationTimeIntervalTrigger
-        {
-            TimeInterval = new TimeSpan(hoursFromNow, 0, 0),
-            Repeats = false
-        };
-
-        var notification = userInfo != null
-            ? CreateiOSNotificationWithUserInfo(
-                $"findthecat_notify_{hoursFromNow}",
-                "にゃんこをさがせ",
-                message,
-                timeTrigger,
-                userInfo
-            )
-            : new iOSNotification
-            {
-                Identifier = $"findthecat_notify_{hoursFromNow}",
-                Title = "にゃんこをさがせ",
-                Body = message,
+                Identifier = identifier,
+                Title = title,
+                Body = body,
                 ShowInForeground = true,
                 ForegroundPresentationOption = (PresentationOption.Alert | PresentationOption.Sound),
                 CategoryIdentifier = "findthecat_reminder",
                 ThreadIdentifier = "findthecat_reminder_thread",
-                Trigger = timeTrigger
+                Trigger = trigger
             };
 
-        iOSNotificationCenter.ScheduleNotification(notification);
-        return notification;
-    }
+            // Work around read-only UserInfo by using reflection to set the property
+            if (userInfo != null && userInfo.Count > 0)
+            {
+                var userInfoProperty = typeof(iOSNotification).GetProperty("UserInfo");
+                if (userInfoProperty != null && userInfoProperty.CanWrite)
+                {
+                    userInfoProperty.SetValue(notification, userInfo);
+                }
+            }
+
+            return notification;
+        }
+
+        static iOSNotification ScheduleiOSNotification(string message, int hoursFromNow, Dictionary<string, string> userInfo = null)
+        {
+            var timeTrigger = new iOSNotificationTimeIntervalTrigger
+            {
+                TimeInterval = new TimeSpan(hoursFromNow, 0, 0),
+                Repeats = false
+            };
+
+            var notification = userInfo != null
+                ? CreateiOSNotificationWithUserInfo(
+                    $"findthecat_notify_{hoursFromNow}",
+                    "にゃんこをさがせ",
+                    message,
+                    timeTrigger,
+                    userInfo
+                )
+                : new iOSNotification
+                {
+                    Identifier = $"findthecat_notify_{hoursFromNow}",
+                    Title = "にゃんこをさがせ",
+                    Body = message,
+                    ShowInForeground = true,
+                    ForegroundPresentationOption = (PresentationOption.Alert | PresentationOption.Sound),
+                    CategoryIdentifier = "findthecat_reminder",
+                    ThreadIdentifier = "findthecat_reminder_thread",
+                    Trigger = timeTrigger
+                };
+
+            iOSNotificationCenter.ScheduleNotification(notification);
+            return notification;
+        }
 #endif
     }
 }
-*/

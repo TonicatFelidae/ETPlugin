@@ -2,37 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PostGameNotification : MonoBehaviour
+
+namespace ET.NotificationSystem
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "PushNotificationData", menuName = "ET/PushNotificationData", order = 0)]
+    public class PushNotificationData : ScriptableObject
     {
+        public PostGameNotificationItem[] notificationItems;
+        public int D7InactivityHours = 168;
+        public int D14InactivityHours = 336;
+        public int D30InactivityHours = 720;
 
+        public string title;
+        public string message;
+        public int timeInHour;
+        public string defaultD7ReminderMessage = "🎁今すぐ200ポイントGET！";
+
+        public PushNotificationData(string title, string message, int timeInHour)
+        {
+            this.title = title;
+            this.message = message;
+            this.timeInHour = timeInHour;
+        }
+
+        public PushNotificationData GetDefaultPushNotificationData()
+            => new PushNotificationData("We miss you!", "Come back and play the game!", D7InactivityHours);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-}
-public class PushNotificationData
-{
-    public const int D7InactivityHours = 168;
-    public const int D14InactivityHours = 336;
-    public const int D30InactivityHours = 720;
-
-    public string title;
-    public string message;
-    public int timeInHour;
-
-    public PushNotificationData(string title, string message, int timeInHour)
-    {
-        this.title = title;
-        this.message = message;
-        this.timeInHour = timeInHour;
-    }
-
-    public static PushNotificationData GetDefaultPushNotificationData()
-        => new PushNotificationData("We miss you!", "Come back and play the game!", D7InactivityHours);
 }
