@@ -30,3 +30,7 @@ These are ET plugins:
   [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.devtools#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.devtools#main)
 - **ET Simplegamekit**  
   [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.simplegamekit#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.simplegamekit#main)
+
+- **ET Mobilekit**  
+  [`https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.mobilekit#main`](https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.mobilekit#main)
+
