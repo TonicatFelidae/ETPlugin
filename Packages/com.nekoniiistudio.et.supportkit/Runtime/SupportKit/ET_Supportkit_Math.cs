@@ -90,7 +90,7 @@ namespace ET.SupportKit
         /// <returns></returns>
         public static int NMinusSeries(int n)
         {
-            return (n+1)*n/2;
+            return (n + 1) * n / 2;
         }
         /// <summary>
         /// Factorial of n 
@@ -145,7 +145,19 @@ namespace ET.SupportKit
         {
             return new Vector2Int(ori.x, ori.y);
         }
+        public static List<int> GetRandomNumbers(int count, int min, int max)
+        {
+            HashSet<int> numbers = new HashSet<int>();  // Use HashSet to avoid duplicates
+            System.Random rand = new System.Random();
 
+            while (numbers.Count < count)
+            {
+                int randomNumber = rand.Next(min, max);
+                numbers.Add(randomNumber);
+            }
+
+            return new List<int>(numbers);
+        }
     }
 }
 namespace ET.SupportKit.EMath
