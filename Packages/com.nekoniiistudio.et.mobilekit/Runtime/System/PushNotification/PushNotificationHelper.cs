@@ -3,8 +3,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Services.RemoteConfig;
-using Zenject;
-using ET;
 
 #if UNITY_IOS
 using Unity.Notifications.iOS;
