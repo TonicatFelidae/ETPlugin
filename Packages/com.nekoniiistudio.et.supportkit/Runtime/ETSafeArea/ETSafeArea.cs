@@ -49,7 +49,9 @@ namespace ET
             Debug.Log($"Screen.safeArea: {safe.y} {SafeAreaHelper.BottomAdsHeight}");
             safe.y = Mathf.Max(safe.y, SafeAreaHelper.BottomAdsHeight);
             float pixelsPerUnit = (float)Screen.height / safe.height;
-            float bottomOverlap = Mathf.Abs(Screen.safeArea.y - SafeAreaHelper.BottomAdsHeight);
+            float bottomOverlap = 0;
+            if (SafeAreaHelper.BottomAdsHeight > Screen.safeArea.y)
+                bottomOverlap = SafeAreaHelper.BottomAdsHeight - Screen.safeArea.y;
             safe.height -= Mathf.Max(0, bottomOverlap);
 
             Vector2 screenSize = new Vector2(Screen.width, Screen.height);
