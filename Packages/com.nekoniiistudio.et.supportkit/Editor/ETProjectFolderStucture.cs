@@ -35,6 +35,12 @@ namespace ET
             CreateFolder(Path.Combine(assetsPath, "Game"), "___Font___");
             CreateFolder(Path.Combine(assetsPath, "Game"), "___Material___");
             CreateFolder(Path.Combine(assetsPath, "Game"), "___Prefab___");
+            string prefabGamePath = Path.Combine(assetsPath, "Game", "___Prefab___");
+            CreateFolder(prefabGamePath, "UI");
+            string prefabUIPath = Path.Combine(prefabGamePath, "UI");
+            CreateFolder(prefabUIPath, "Popup");
+            CreateFolder(prefabUIPath, "Sheet");
+            CreateFolder(prefabUIPath, "Screen");
             CreateFolder(Path.Combine(assetsPath, "Game"), "___Render___");
             // Scripts folder
             CreateFolder(Path.Combine(assetsPath, "Game"), "___Script___");
@@ -53,6 +59,10 @@ namespace ET
             CreateFolder(scriptPath, "Services");
             CreateFolder(scriptPath, "System");
             CreateFolder(scriptPath, "UI");
+            string scriptUIPath = Path.Combine(scriptPath, "UI");
+            CreateFolder(scriptUIPath, "Popup");
+            CreateFolder(scriptUIPath, "Sheet");
+            CreateFolder(scriptUIPath, "Screen");
             //
             CreateFolder(Path.Combine(assetsPath, "Game"), "___Sound___");
             string soundPath = Path.Combine(assetsPath, "Game", "___Sound___");
