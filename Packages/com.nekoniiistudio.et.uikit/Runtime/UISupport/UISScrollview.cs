@@ -5,87 +5,112 @@ using TMPro;
 using UnityEngine.UI;
 using ET.SupportKit;
 
-public class UISScrollview : MonoBehaviour
+namespace ET.UIKit
 {
-    // Start is called before the first frame update
-    Transform content;
-    public bool is_fixcontentheight;
-    public int limitcontent = 0;
-    public bool is_fixcontentheight_TMP;
-    public bool is_autoscroll_TMP;
-    public float scroll_delay;
-    public float scroll_speed;
-    float _curspacey;
-    float _spacey;
-    float _viewh = 60f;
-    float _viewscrollh;
-    void Start()
+    [RequireComponent(typeof(ScrollRect))]
+    public class UISScrollView : MonoBehaviour
     {
-        _curspacey = _spacey;
-        content = transform.Find("Viewport").Find("Content").transform;
-    }
-    private void OnEnable()
-    {
-        _curspacey = _spacey =0;
-    }
-    // Update is called once per frame
-    private void FixedUpdate()
-    {
-        if (limitcontent > 0)
+        [Header("Scroll view fixer")]
+        [Tooltip("Enable fixed content height for GridLayout content.")]
+        [SerializeField] private bool _isFixContentHeight;
+        [Tooltip("Maximum number of child items allowed in the content area.")]
+        [SerializeField] private int _limitContent = 0;
+        [Tooltip("Enable fixed text content height for TextMeshPro content.")]
+        [SerializeField] private bool _isFixContentHeightTMP;
+
+        [Header("Auto scroll settings for TMP content")]
+        [Tooltip("Automatically scroll content when TMP text height exceeds the view.")]
+        [SerializeField] private bool _isAutoScrollTMP;
+        [Tooltip("Delay before auto-scrolling begins, in seconds.")]
+        [SerializeField] private float _scrollDelay;
+        [Tooltip("Scroll speed used when auto-scrolling TMP content.")]
+        [SerializeField] private float _scrollSpeed;
+
+        private Transform _content;
+        private float _curSpaceY;
+        private float _spaceY;
+        private float _viewH = 60f;
+        private float _viewScrollH;
+
+        private void Start()
         {
-            if (content.childCount > limitcontent)
+            _curSpaceY = _spaceY;
+            _content = transform.Find("Viewport").Find("Content").transform;
+        }
+
+        private void OnEnable()
+        {
+            _curSpaceY = _spaceY = 0;
+        }
+
+        private void FixedUpdate()
+        {
+            if (_limitContent > 0 && _content != null && _content.childCount > _limitContent)
             {
-                Destroy(content.GetChild(0).gameObject);
+                Destroy(_content.GetChild(0).gameObject);
             }
         }
-    }
-    void Update()
-    {
-        
-        if (is_fixcontentheight_TMP && content.childCount>0)
+
+        private void Update()
         {
-            _spacey = content.GetChild(0).GetComponent<TextMeshProUGUI>().textBounds.size.y;
-            if (_spacey != _curspacey)
+            if (_content == null)
             {
-                content.GetComponent<RectTransform>().sizeDelta = new Vector2(content.GetComponent<RectTransform>().sizeDelta.x, _spacey);
-                content.GetComponent<RectTransform>().localPosition = new Vector2(0, 0);
-                if (is_autoscroll_TMP)
+                return;
+            }
+
+            if (_isFixContentHeightTMP && _content.childCount > 0)
+            {
+                _spaceY = _content.GetChild(0).GetComponent<TextMeshProUGUI>().textBounds.size.y;
+                if (_spaceY != _curSpaceY)
                 {
-                    _viewscrollh = _spacey - _viewh;
-                    if (_viewscrollh > 0)
+                    RectTransform contentRect = _content.GetComponent<RectTransform>();
+                    contentRect.sizeDelta = new Vector2(contentRect.sizeDelta.x, _spaceY);
+                    contentRect.localPosition = Vector2.zero;
+
+                    if (_isAutoScrollTMP)
                     {
-                        StartCoroutine(ScrollContent());
+                        _viewScrollH = _spaceY - _viewH;
+                        if (_viewScrollH > 0)
+                        {
+                            StartCoroutine(ScrollContent());
+                        }
                     }
+
+                    _curSpaceY = _spaceY;
                 }
-                _curspacey = _spacey;
             }
 
+            if (_isFixContentHeight)
+            {
+                GridLayoutGroup gridLayout = _content.GetComponent<GridLayoutGroup>();
+                RectTransform contentRect = _content.GetComponent<RectTransform>();
+
+                float inSpaceY = gridLayout.spacing.y;
+                float inSizeY = gridLayout.cellSize.y;
+                float padUp = gridLayout.padding.top;
+                float padDown = gridLayout.padding.bottom;
+
+                Vector2 sizeDelta = contentRect.sizeDelta;
+                int childCount = ET_Transform.active_child_count(_content);
+                sizeDelta.y = inSizeY * childCount + (childCount - 1) * inSpaceY + padUp + padDown;
+
+                contentRect.sizeDelta = sizeDelta;
+            }
         }
 
-        if (is_fixcontentheight)
+        private IEnumerator ScrollContent()
         {
-            float in_spacey = content.GetComponent<GridLayoutGroup>().spacing.y;
-            float in_sizey = content.GetComponent<GridLayoutGroup>().cellSize.y;
-            float padup = content.GetComponent<GridLayoutGroup>().padding.top;
-            float paddown = content.GetComponent<GridLayoutGroup>().padding.bottom;
+            yield return new WaitForSeconds(_scrollDelay);
 
-            Vector2 sizex = content.GetComponent<RectTransform>().sizeDelta;
-            int childcount = ET_Transform.active_child_count(content);
-            sizex.y = in_sizey * childcount + (childcount - 1) * in_spacey + padup + paddown;
-            
+            RectTransform contentRect = _content.GetComponent<RectTransform>();
+            while (contentRect.localPosition.y < _viewScrollH)
+            {
+                float curY = contentRect.localPosition.y;
+                contentRect.localPosition = new Vector2(0, curY + _scrollSpeed);
+                yield return new WaitForEndOfFrame();
+            }
 
-            content.GetComponent<RectTransform>().sizeDelta = sizex;
+            yield return StartCoroutine(ScrollContent());
         }
-    }
-    IEnumerator ScrollContent()
-    {
-        yield return new WaitForSeconds(scroll_delay);
-        while (content.GetComponent<RectTransform>().localPosition.y < _viewscrollh)
-        {
-            float cury = content.GetComponent<RectTransform>().localPosition.y;
-            content.GetComponent<RectTransform>().localPosition = new Vector2(0, cury += scroll_speed);
-            yield return new WaitForEndOfFrame();
-        }
-        yield return StartCoroutine(ScrollContent());
     }
 }
