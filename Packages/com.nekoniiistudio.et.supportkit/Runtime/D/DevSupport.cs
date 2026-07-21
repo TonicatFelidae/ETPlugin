@@ -3,12 +3,12 @@ namespace ET
 {
     public class DevSupport : Singleton<DevSupport>
     {
-        public bool isDebugOn = false;
+        public bool isDebugOn = false; public bool IsDebugOn => isDebugOn;
 
         void Awake()
         {
             Debug.Log("[DevSupport]: isDebugOn = " + isDebugOn);
-            if (isDebugOn)
+            if (IsDebugOn)
                 DontDestroyOnLoad(this);
         }
 
