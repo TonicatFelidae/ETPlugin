@@ -1,0 +1,15 @@
+<!--
+  Provides com.google.android.gms.ads.identifier.AdvertisingIdClient so
+  ApplovinMaxManager can read this device's GAID at runtime and register it as a
+  MAX test device. Only used by the DEVELOPMENT_BUILD / editor code path; the
+  runtime lookup fails gracefully (init proceeds without a test device) if the
+  class is absent, so this is purely to make Android auto-registration work.
+
+  After adding this file, run:
+  Assets > External Dependency Manager > Android Resolver > Force Resolve.
+-->
+<dependencies>
+  <androidPackages>
+    <androidPackage spec="com.google.android.gms:play-services-ads-identifier:18.0.1" />
+  </androidPackages>
+</dependencies>

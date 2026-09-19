@@ -1,0 +1,11 @@
+{
+  "name": "com.nekoniiistudio.et.monetization.applovin",
+  "version": "1.0.0",
+  "displayName": "ET Monetization AppLovin",
+  "description": "ET AppLovin MAX monetization manager, mediation utilities, ad funnel tracking, and attribution helpers for runtime use.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "type": "library"
+}
