@@ -47,4 +47,13 @@ public class SaveFileClener : Editor
             Debug.LogWarning("Persistent data path does not exist.");
         }
     }
+
+    [MenuItem("ETools/Delete Persistent Data And Player Prefs")]
+    public static void DeleteAllPersistentDataAndPlayerPref()
+    {
+        DeleteAllPersistentData();
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.Save();
+        Debug.Log("All persistent data and PlayerPrefs deleted.");
+    }
 }
