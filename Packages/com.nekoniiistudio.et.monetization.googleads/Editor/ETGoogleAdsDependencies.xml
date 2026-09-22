@@ -1,0 +1,22 @@
+<!--
+  ET Google Mobile Ads EDM4U dependencies.
+  Provides play-services-ads for Android and Google-Mobile-Ads-SDK for iOS.
+  Run: Assets > External Dependency Manager > Android Resolver > Force Resolve
+-->
+<dependencies>
+  <androidPackages>
+    <androidPackage spec="com.google.android.gms:play-services-ads:23.6.0">
+      <repositories>
+        <repository>https://maven.google.com/</repository>
+      </repositories>
+    </androidPackage>
+    <androidPackage spec="com.google.android.gms:play-services-ads-identifier:18.0.1" />
+  </androidPackages>
+  <iosPods>
+    <iosPod name="Google-Mobile-Ads-SDK" version="~> 11.2">
+      <sources>
+        <source>https://github.com/CocoaPods/Specs</source>
+      </sources>
+    </iosPod>
+  </iosPods>
+</dependencies>

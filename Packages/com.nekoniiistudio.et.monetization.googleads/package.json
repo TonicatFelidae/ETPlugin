@@ -1,0 +1,11 @@
+{
+  "name": "com.nekoniiistudio.et.monetization.googleads",
+  "version": "1.0.0",
+  "displayName": "ET Monetization Google Mobile Ads",
+  "description": "ET Google Mobile Ads (AdMob) manager, ad funnel tracking, safe area handler, and test utilities ready for multiple project integration as a git package.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "type": "library"
+}
