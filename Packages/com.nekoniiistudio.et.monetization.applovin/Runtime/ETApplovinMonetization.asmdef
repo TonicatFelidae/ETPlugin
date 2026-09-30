@@ -2,8 +2,8 @@
     "name": "ETApplovinMonetization",
     "rootNamespace": "ET.Monetization",
     "references": [
-        "GUID:a4cfc1a18fa3a469b96d885db522f42e",
-        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "MaxSdk.Scripts",
+        "UniTask",
         "UnityEngine.UI"
     ],
     "includePlatforms": [],
