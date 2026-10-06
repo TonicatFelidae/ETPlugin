@@ -205,6 +205,7 @@ namespace ET.Monetization
             if (_bannerView == null)
             {
                 LoadBanner(placement);
+                UpdateBannerSafeArea();
             }
             else
             {
