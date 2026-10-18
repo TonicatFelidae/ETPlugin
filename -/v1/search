@@ -1,0 +1,526 @@
+{
+  "objects": [
+    {
+      "package": {
+        "name": "com.nekoniiistudio.et.devtools",
+        "scope": "unscoped",
+        "version": "1.0.0",
+        "displayName": "ET Dev Tools",
+        "description": "ET Dev Tools for runtime use.",
+        "keywords": [
+          "et",
+          "nekoniiistudio",
+          "unity"
+        ],
+        "date": "2026-10-18T21:50:47.000Z",
+        "author": {
+          "name": "Nekoniii Studio"
+        },
+        "publisher": {
+          "name": "Nekoniii Studio"
+        },
+        "maintainers": [
+          {
+            "name": "Nekoniii Studio"
+          }
+        ],
+        "links": {
+          "npm": "https://tonicatfelidae.github.io/ETPlugin/com.nekoniiistudio.et.devtools",
+          "homepage": "https://github.com/TonicatFelidae/ETPlugin",
+          "repository": "https://github.com/TonicatFelidae/ETPlugin.git"
+        }
+      },
+      "score": {
+        "final": 1.0,
+        "detail": {
+          "quality": 1.0,
+          "popularity": 1.0,
+          "maintenance": 1.0
+        }
+      },
+      "searchScore": 1.0
+    },
+    {
+      "package": {
+        "name": "com.nekoniiistudio.et.dialogue",
+        "scope": "unscoped",
+        "version": "1.0.5",
+        "displayName": "ET Dialogue",
+        "description": "ET Dialogue for runtime use.",
+        "keywords": [
+          "et",
+          "nekoniiistudio",
+          "unity"
+        ],
+        "date": "2026-10-18T21:50:47.000Z",
+        "author": {
+          "name": "Nekoniii Studio"
+        },
+        "publisher": {
+          "name": "Nekoniii Studio"
+        },
+        "maintainers": [
+          {
+            "name": "Nekoniii Studio"
+          }
+        ],
+        "links": {
+          "npm": "https://tonicatfelidae.github.io/ETPlugin/com.nekoniiistudio.et.dialogue",
+          "homepage": "https://github.com/TonicatFelidae/ETPlugin",
+          "repository": "https://github.com/TonicatFelidae/ETPlugin.git"
+        }
+      },
+      "score": {
+        "final": 1.0,
+        "detail": {
+          "quality": 1.0,
+          "popularity": 1.0,
+          "maintenance": 1.0
+        }
+      },
+      "searchScore": 1.0
+    },
+    {
+      "package": {
+        "name": "com.nekoniiistudio.et.engine",
+        "scope": "unscoped",
+        "version": "1.0.5",
+        "displayName": "ET Engine",
+        "description": "ET Engine base on zenject for runtime use.",
+        "keywords": [
+          "et",
+          "nekoniiistudio",
+          "unity"
+        ],
+        "date": "2026-10-18T21:50:47.000Z",
+        "author": {
+          "name": "Nekoniii Studio"
+        },
+        "publisher": {
+          "name": "Nekoniii Studio"
+        },
+        "maintainers": [
+          {
+            "name": "Nekoniii Studio"
+          }
+        ],
+        "links": {
+          "npm": "https://tonicatfelidae.github.io/ETPlugin/com.nekoniiistudio.et.engine",
+          "homepage": "https://github.com/TonicatFelidae/ETPlugin",
+          "repository": "https://github.com/TonicatFelidae/ETPlugin.git"
+        }
+      },
+      "score": {
+        "final": 1.0,
+        "detail": {
+          "quality": 1.0,
+          "popularity": 1.0,
+          "maintenance": 1.0
+        }
+      },
+      "searchScore": 1.0
+    },
+    {
+      "package": {
+        "name": "com.nekoniiistudio.et.inputmanager",
+        "scope": "unscoped",
+        "version": "1.0.0",
+        "displayName": "ET Input Manager",
+        "description": "ET Input Manager for runtime use.",
+        "keywords": [
+          "et",
+          "nekoniiistudio",
+          "unity"
+        ],
+        "date": "2026-10-18T21:50:47.000Z",
+        "author": {
+          "name": "Nekoniii Studio"
+        },
+        "publisher": {
+          "name": "Nekoniii Studio"
+        },
+        "maintainers": [
+          {
+            "name": "Nekoniii Studio"
+          }
+        ],
+        "links": {
+          "npm": "https://tonicatfelidae.github.io/ETPlugin/com.nekoniiistudio.et.inputmanager",
+          "homepage": "https://github.com/TonicatFelidae/ETPlugin",
+          "repository": "https://github.com/TonicatFelidae/ETPlugin.git"
+        }
+      },
+      "score": {
+        "final": 1.0,
+        "detail": {
+          "quality": 1.0,
+          "popularity": 1.0,
+          "maintenance": 1.0
+        }
+      },
+      "searchScore": 1.0
+    },
+    {
+      "package": {
+        "name": "com.nekoniiistudio.et.mobilekit",
+        "scope": "unscoped",
+        "version": "1.0.1",
+        "displayName": "ET Mobile Kit",
+        "description": "ET mobile utilities for runtime use.",
+        "keywords": [
+          "et",
+          "nekoniiistudio",
+          "unity"
+        ],
+        "date": "2026-10-18T21:50:47.000Z",
+        "author": {
+          "name": "Nekoniii Studio"
+        },
+        "publisher": {
+          "name": "Nekoniii Studio"
+        },
+        "maintainers": [
+          {
+            "name": "Nekoniii Studio"
+          }
+        ],
+        "links": {
+          "npm": "https://tonicatfelidae.github.io/ETPlugin/com.nekoniiistudio.et.mobilekit",
+          "homepage": "https://github.com/TonicatFelidae/ETPlugin",
+          "repository": "https://github.com/TonicatFelidae/ETPlugin.git"
+        }
+      },
+      "score": {
+        "final": 1.0,
+        "detail": {
+          "quality": 1.0,
+          "popularity": 1.0,
+          "maintenance": 1.0
+        }
+      },
+      "searchScore": 1.0
+    },
+    {
+      "package": {
+        "name": "com.nekoniiistudio.et.monetization.applovin",
+        "scope": "unscoped",
+        "version": "1.0.0",
+        "displayName": "ET Monetization AppLovin",
+        "description": "ET AppLovin MAX monetization manager, mediation utilities, ad funnel tracking, and attribution helpers for runtime use.",
+        "keywords": [
+          "et",
+          "nekoniiistudio",
+          "unity"
+        ],
+        "date": "2026-10-18T21:50:47.000Z",
+        "author": {
+          "name": "Nekoniii Studio"
+        },
+        "publisher": {
+          "name": "Nekoniii Studio"
+        },
+        "maintainers": [
+          {
+            "name": "Nekoniii Studio"
+          }
+        ],
+        "links": {
+          "npm": "https://tonicatfelidae.github.io/ETPlugin/com.nekoniiistudio.et.monetization.applovin",
+          "homepage": "https://github.com/TonicatFelidae/ETPlugin",
+          "repository": "https://github.com/TonicatFelidae/ETPlugin.git"
+        }
+      },
+      "score": {
+        "final": 1.0,
+        "detail": {
+          "quality": 1.0,
+          "popularity": 1.0,
+          "maintenance": 1.0
+        }
+      },
+      "searchScore": 1.0
+    },
+    {
+      "package": {
+        "name": "com.nekoniiistudio.et.monetization.googleads",
+        "scope": "unscoped",
+        "version": "1.0.0",
+        "displayName": "ET Monetization Google Mobile Ads",
+        "description": "ET Google Mobile Ads (AdMob) manager, ad funnel tracking, safe area handler, and test utilities ready for multiple project integration as a git package.",
+        "keywords": [
+          "et",
+          "nekoniiistudio",
+          "unity"
+        ],
+        "date": "2026-10-18T21:50:47.000Z",
+        "author": {
+          "name": "Nekoniii Studio"
+        },
+        "publisher": {
+          "name": "Nekoniii Studio"
+        },
+        "maintainers": [
+          {
+            "name": "Nekoniii Studio"
+          }
+        ],
+        "links": {
+          "npm": "https://tonicatfelidae.github.io/ETPlugin/com.nekoniiistudio.et.monetization.googleads",
+          "homepage": "https://github.com/TonicatFelidae/ETPlugin",
+          "repository": "https://github.com/TonicatFelidae/ETPlugin.git"
+        }
+      },
+      "score": {
+        "final": 1.0,
+        "detail": {
+          "quality": 1.0,
+          "popularity": 1.0,
+          "maintenance": 1.0
+        }
+      },
+      "searchScore": 1.0
+    },
+    {
+      "package": {
+        "name": "com.nekoniiistudio.et.monetization.iap",
+        "scope": "unscoped",
+        "version": "1.0.0",
+        "displayName": "ET Monetization In-App Purchasing",
+        "description": "ET In-App Purchasing (Unity IAP v5+) manager, cross-product entitlement resolver, reactive UI button, and funnel telemetry ready for multiple project integration as a git package.",
+        "keywords": [
+          "et",
+          "nekoniiistudio",
+          "unity"
+        ],
+        "date": "2026-10-18T21:50:47.000Z",
+        "author": {
+          "name": "Nekoniii Studio"
+        },
+        "publisher": {
+          "name": "Nekoniii Studio"
+        },
+        "maintainers": [
+          {
+            "name": "Nekoniii Studio"
+          }
+        ],
+        "links": {
+          "npm": "https://tonicatfelidae.github.io/ETPlugin/com.nekoniiistudio.et.monetization.iap",
+          "homepage": "https://github.com/TonicatFelidae/ETPlugin",
+          "repository": "https://github.com/TonicatFelidae/ETPlugin.git"
+        }
+      },
+      "score": {
+        "final": 1.0,
+        "detail": {
+          "quality": 1.0,
+          "popularity": 1.0,
+          "maintenance": 1.0
+        }
+      },
+      "searchScore": 1.0
+    },
+    {
+      "package": {
+        "name": "com.nekoniiistudio.et.resourceloader",
+        "scope": "unscoped",
+        "version": "1.0.0",
+        "displayName": "ET Resource Loader",
+        "description": "ET Resource Loader capable of load resource and addressable.",
+        "keywords": [
+          "et",
+          "nekoniiistudio",
+          "unity"
+        ],
+        "date": "2026-10-18T21:50:47.000Z",
+        "author": {
+          "name": "Nekoniii Studio"
+        },
+        "publisher": {
+          "name": "Nekoniii Studio"
+        },
+        "maintainers": [
+          {
+            "name": "Nekoniii Studio"
+          }
+        ],
+        "links": {
+          "npm": "https://tonicatfelidae.github.io/ETPlugin/com.nekoniiistudio.et.resourceloader",
+          "homepage": "https://github.com/TonicatFelidae/ETPlugin",
+          "repository": "https://github.com/TonicatFelidae/ETPlugin.git"
+        }
+      },
+      "score": {
+        "final": 1.0,
+        "detail": {
+          "quality": 1.0,
+          "popularity": 1.0,
+          "maintenance": 1.0
+        }
+      },
+      "searchScore": 1.0
+    },
+    {
+      "package": {
+        "name": "com.nekoniiistudio.et.saveload",
+        "scope": "unscoped",
+        "version": "1.1.1",
+        "displayName": "ET Saveload",
+        "description": "ET saveload.",
+        "keywords": [
+          "et",
+          "nekoniiistudio",
+          "unity"
+        ],
+        "date": "2026-10-18T21:50:47.000Z",
+        "author": {
+          "name": "Nekoniii Studio"
+        },
+        "publisher": {
+          "name": "Nekoniii Studio"
+        },
+        "maintainers": [
+          {
+            "name": "Nekoniii Studio"
+          }
+        ],
+        "links": {
+          "npm": "https://tonicatfelidae.github.io/ETPlugin/com.nekoniiistudio.et.saveload",
+          "homepage": "https://github.com/TonicatFelidae/ETPlugin",
+          "repository": "https://github.com/TonicatFelidae/ETPlugin.git"
+        }
+      },
+      "score": {
+        "final": 1.0,
+        "detail": {
+          "quality": 1.0,
+          "popularity": 1.0,
+          "maintenance": 1.0
+        }
+      },
+      "searchScore": 1.0
+    },
+    {
+      "package": {
+        "name": "com.nekoniiistudio.et.supportkit",
+        "scope": "unscoped",
+        "version": "1.29.5",
+        "displayName": "ET Support Kit",
+        "description": "ET support utilities for runtime use.",
+        "keywords": [
+          "et",
+          "nekoniiistudio",
+          "unity"
+        ],
+        "date": "2026-10-18T21:50:47.000Z",
+        "author": {
+          "name": "Nekoniii Studio"
+        },
+        "publisher": {
+          "name": "Nekoniii Studio"
+        },
+        "maintainers": [
+          {
+            "name": "Nekoniii Studio"
+          }
+        ],
+        "links": {
+          "npm": "https://tonicatfelidae.github.io/ETPlugin/com.nekoniiistudio.et.supportkit",
+          "homepage": "https://github.com/TonicatFelidae/ETPlugin",
+          "repository": "https://github.com/TonicatFelidae/ETPlugin.git"
+        }
+      },
+      "score": {
+        "final": 1.0,
+        "detail": {
+          "quality": 1.0,
+          "popularity": 1.0,
+          "maintenance": 1.0
+        }
+      },
+      "searchScore": 1.0
+    },
+    {
+      "package": {
+        "name": "com.nekoniiistudio.et.uikit",
+        "scope": "unscoped",
+        "version": "1.1.6",
+        "displayName": "ET UI Kit",
+        "description": "ET UI utilities for runtime use. Changelog:\n1.1.6: added sample assets and UISScrollview file rename fix.\n1.1.5: updated UISScrollView with namespace, ScrollRect requirement, serialized field tooltips, and naming cleanup.",
+        "keywords": [
+          "et",
+          "nekoniiistudio",
+          "unity"
+        ],
+        "date": "2026-10-18T21:50:47.000Z",
+        "author": {
+          "name": "Nekoniii Studio"
+        },
+        "publisher": {
+          "name": "Nekoniii Studio"
+        },
+        "maintainers": [
+          {
+            "name": "Nekoniii Studio"
+          }
+        ],
+        "links": {
+          "npm": "https://tonicatfelidae.github.io/ETPlugin/com.nekoniiistudio.et.uikit",
+          "homepage": "https://github.com/TonicatFelidae/ETPlugin",
+          "repository": "https://github.com/TonicatFelidae/ETPlugin.git"
+        }
+      },
+      "score": {
+        "final": 1.0,
+        "detail": {
+          "quality": 1.0,
+          "popularity": 1.0,
+          "maintenance": 1.0
+        }
+      },
+      "searchScore": 1.0
+    },
+    {
+      "package": {
+        "name": "com.nekoniiistudio.et.versioncontrol",
+        "scope": "unscoped",
+        "version": "1.0.0",
+        "displayName": "ET Version Control",
+        "description": "ET Version Control for runtime use.",
+        "keywords": [
+          "et",
+          "nekoniiistudio",
+          "unity"
+        ],
+        "date": "2026-10-18T21:50:47.000Z",
+        "author": {
+          "name": "Nekoniii Studio"
+        },
+        "publisher": {
+          "name": "Nekoniii Studio"
+        },
+        "maintainers": [
+          {
+            "name": "Nekoniii Studio"
+          }
+        ],
+        "links": {
+          "npm": "https://tonicatfelidae.github.io/ETPlugin/com.nekoniiistudio.et.versioncontrol",
+          "homepage": "https://github.com/TonicatFelidae/ETPlugin",
+          "repository": "https://github.com/TonicatFelidae/ETPlugin.git"
+        }
+      },
+      "score": {
+        "final": 1.0,
+        "detail": {
+          "quality": 1.0,
+          "popularity": 1.0,
+          "maintenance": 1.0
+        }
+      },
+      "searchScore": 1.0
+    }
+  ],
+  "total": 13,
+  "time": "2026-10-18T21:50:47.000Z"
+}

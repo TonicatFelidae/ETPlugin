@@ -1,0 +1,40 @@
+{
+  "_id": "com.nekoniiistudio.et.mobilekit",
+  "name": "com.nekoniiistudio.et.mobilekit",
+  "displayName": "ET Mobile Kit",
+  "description": "ET mobile utilities for runtime use.",
+  "dist-tags": {
+    "latest": "1.0.1"
+  },
+  "versions": {
+    "1.0.1": {
+      "name": "com.nekoniiistudio.et.mobilekit",
+      "version": "1.0.1",
+      "displayName": "ET Mobile Kit",
+      "description": "ET mobile utilities for runtime use.",
+      "unity": "2022.3",
+      "author": {
+        "name": "Nekoniii Studio"
+      },
+      "type": "library",
+      "_id": "com.nekoniiistudio.et.mobilekit@1.0.1",
+      "readmeFilename": "README.md",
+      "dependencies": {},
+      "dist": {
+        "shasum": "63a883594ce0e092d8ecd6aacb6d0aab717c559b",
+        "integrity": "sha512-MtfZ0R8D6wgUf0BdrOOySFLB18s+JKhbdQTXE+IB1GBqrMxY+HK+SlJ9Rz5FdPPYuP2uR1K9pvQXtouIfp/c8w==",
+        "tarball": "https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.mobilekit-1.0.1.tgz"
+      }
+    }
+  },
+  "time": {
+    "created": "2026-10-18T21:48:03.000Z",
+    "modified": "2026-10-18T21:50:47.000Z",
+    "1.0.1": "2026-10-18T21:50:47.000Z"
+  },
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "readme": "ET mobile kit\n",
+  "_attachments": {}
+}

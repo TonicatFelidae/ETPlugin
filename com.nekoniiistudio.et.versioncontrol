@@ -1,0 +1,40 @@
+{
+  "_id": "com.nekoniiistudio.et.versioncontrol",
+  "name": "com.nekoniiistudio.et.versioncontrol",
+  "displayName": "ET Version Control",
+  "description": "ET Version Control for runtime use.",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "com.nekoniiistudio.et.versioncontrol",
+      "version": "1.0.0",
+      "displayName": "ET Version Control",
+      "description": "ET Version Control for runtime use.",
+      "unity": "2022.3",
+      "author": {
+        "name": "Nekoniii Studio"
+      },
+      "type": "library",
+      "_id": "com.nekoniiistudio.et.versioncontrol@1.0.0",
+      "readmeFilename": "README.md",
+      "dependencies": {},
+      "dist": {
+        "shasum": "a560a9f74a966bfa1437ddb9b1ac540a1e0fe35c",
+        "integrity": "sha512-cCzXq7sWe9jGib8anr7okAjHquBs7mkxdGy845/lZLkTfwFvEifMGPRUiKnDsYF3BSMBwzCcYKTfL5+ZdJtCZw==",
+        "tarball": "https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.versioncontrol-1.0.0.tgz"
+      }
+    }
+  },
+  "time": {
+    "created": "2026-10-18T21:48:03.000Z",
+    "modified": "2026-10-18T21:50:47.000Z",
+    "1.0.0": "2026-10-18T21:50:47.000Z"
+  },
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "readme": "ET Simple Game Kit\n",
+  "_attachments": {}
+}

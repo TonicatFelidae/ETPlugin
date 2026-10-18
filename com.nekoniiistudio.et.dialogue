@@ -1,0 +1,40 @@
+{
+  "_id": "com.nekoniiistudio.et.dialogue",
+  "name": "com.nekoniiistudio.et.dialogue",
+  "displayName": "ET Dialogue",
+  "description": "ET Dialogue for runtime use.",
+  "dist-tags": {
+    "latest": "1.0.5"
+  },
+  "versions": {
+    "1.0.5": {
+      "name": "com.nekoniiistudio.et.dialogue",
+      "version": "1.0.5",
+      "displayName": "ET Dialogue",
+      "description": "ET Dialogue for runtime use.",
+      "unity": "2022.3",
+      "author": {
+        "name": "Nekoniii Studio"
+      },
+      "type": "library",
+      "_id": "com.nekoniiistudio.et.dialogue@1.0.5",
+      "readmeFilename": "README.md",
+      "dependencies": {},
+      "dist": {
+        "shasum": "45be0fc98cedfc8d283847898c991754109bfc13",
+        "integrity": "sha512-81yxxkmKt4YLJQjpYyXg3RazZEyw6Dj2/7H4eRbBT4K8+6yiXDbf2FbBqYPaX2LS8AhqmGtgN9n0ImdMRAShKQ==",
+        "tarball": "https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.dialogue-1.0.5.tgz"
+      }
+    }
+  },
+  "time": {
+    "created": "2026-10-18T21:48:03.000Z",
+    "modified": "2026-10-18T21:50:47.000Z",
+    "1.0.5": "2026-10-18T21:50:47.000Z"
+  },
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "readme": "ET support kit\n",
+  "_attachments": {}
+}

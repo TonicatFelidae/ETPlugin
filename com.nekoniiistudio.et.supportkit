@@ -1,0 +1,40 @@
+{
+  "_id": "com.nekoniiistudio.et.supportkit",
+  "name": "com.nekoniiistudio.et.supportkit",
+  "displayName": "ET Support Kit",
+  "description": "ET support utilities for runtime use.",
+  "dist-tags": {
+    "latest": "1.29.5"
+  },
+  "versions": {
+    "1.29.5": {
+      "name": "com.nekoniiistudio.et.supportkit",
+      "version": "1.29.5",
+      "displayName": "ET Support Kit",
+      "description": "ET support utilities for runtime use.",
+      "unity": "2022.3",
+      "author": {
+        "name": "Nekoniii Studio"
+      },
+      "type": "library",
+      "_id": "com.nekoniiistudio.et.supportkit@1.29.5",
+      "readmeFilename": "README.md",
+      "dependencies": {},
+      "dist": {
+        "shasum": "a750ca6553c81864fbfdbe33bad16b5c46f755e3",
+        "integrity": "sha512-T5TxEd0nQtmZ7XIVinI6XVko/Mc74xhUqtIfbA5P8wrCtNfkONhMko7igOYyPJ0k51wvsW7h+jAw7Z4D3Pyc7g==",
+        "tarball": "https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.supportkit-1.29.5.tgz"
+      }
+    }
+  },
+  "time": {
+    "created": "2026-10-18T21:48:03.000Z",
+    "modified": "2026-10-18T21:50:47.000Z",
+    "1.29.5": "2026-10-18T21:50:47.000Z"
+  },
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "readme": "ET support kit\n",
+  "_attachments": {}
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>ET Plugin Scoped Registry</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 960px; margin: 40px auto; padding: 0 20px; color: #222; line-height: 1.5; }
+    pre { background: #1e1e1e; color: #d4d4d4; padding: 16px; border-radius: 8px; overflow-x: auto; }
+    code { background: #f2f2f2; padding: 2px 6px; border-radius: 4px; }
+    pre code { background: none; padding: 0; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border-bottom: 1px solid #e0e0e0; text-align: left; padding: 10px 8px; font-size: 14px; }
+    th { background: #f8f9fa; }
+  </style>
+</head>
+<body>
+  <h1>ET Plugin UPM Scoped Registry</h1>
+  <p>Add this Scoped Registry to your Unity project's <code>Packages/manifest.json</code> to browse and install all ET packages directly inside <strong>Window &rarr; Package Manager &rarr; My Registries</strong>:</p>
+  <pre><code>"scopedRegistries": [
+  {
+    "name": "ET Plugin Registry",
+    "url": "https://tonicatfelidae.github.io/ETPlugin",
+    "scopes": [
+      "com.nekoniiistudio.et"
+    ]
+  }
+]</code></pre>
+  <h2>Available Packages (13)</h2>
+  <table>
+    <thead>
+      <tr><th>Package ID</th><th>Display Name</th><th>Latest</th><th>Description</th><th>Download</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>com.nekoniiistudio.et.devtools</code></td><td><strong>ET Dev Tools</strong></td><td><code>1.0.0</code></td><td>ET Dev Tools for runtime use.</td><td><a href="https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.devtools-1.0.0.tgz">.tgz</a></td></tr>
+<tr><td><code>com.nekoniiistudio.et.dialogue</code></td><td><strong>ET Dialogue</strong></td><td><code>1.0.5</code></td><td>ET Dialogue for runtime use.</td><td><a href="https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.dialogue-1.0.5.tgz">.tgz</a></td></tr>
+<tr><td><code>com.nekoniiistudio.et.engine</code></td><td><strong>ET Engine</strong></td><td><code>1.0.5</code></td><td>ET Engine base on zenject for runtime use.</td><td><a href="https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.engine-1.0.5.tgz">.tgz</a></td></tr>
+<tr><td><code>com.nekoniiistudio.et.inputmanager</code></td><td><strong>ET Input Manager</strong></td><td><code>1.0.0</code></td><td>ET Input Manager for runtime use.</td><td><a href="https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.inputmanager-1.0.0.tgz">.tgz</a></td></tr>
+<tr><td><code>com.nekoniiistudio.et.mobilekit</code></td><td><strong>ET Mobile Kit</strong></td><td><code>1.0.1</code></td><td>ET mobile utilities for runtime use.</td><td><a href="https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.mobilekit-1.0.1.tgz">.tgz</a></td></tr>
+<tr><td><code>com.nekoniiistudio.et.monetization.applovin</code></td><td><strong>ET Monetization AppLovin</strong></td><td><code>1.0.0</code></td><td>ET AppLovin MAX monetization manager, mediation utilities, ad funnel tracking, and attribution helpers for runtime use.</td><td><a href="https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.monetization.applovin-1.0.0.tgz">.tgz</a></td></tr>
+<tr><td><code>com.nekoniiistudio.et.monetization.googleads</code></td><td><strong>ET Monetization Google Mobile Ads</strong></td><td><code>1.0.0</code></td><td>ET Google Mobile Ads (AdMob) manager, ad funnel tracking, safe area handler, and test utilities ready for multiple project integration as a git package.</td><td><a href="https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.monetization.googleads-1.0.0.tgz">.tgz</a></td></tr>
+<tr><td><code>com.nekoniiistudio.et.monetization.iap</code></td><td><strong>ET Monetization In-App Purchasing</strong></td><td><code>1.0.0</code></td><td>ET In-App Purchasing (Unity IAP v5+) manager, cross-product entitlement resolver, reactive UI button, and funnel telemetry ready for multiple project integration as a git package.</td><td><a href="https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.monetization.iap-1.0.0.tgz">.tgz</a></td></tr>
+<tr><td><code>com.nekoniiistudio.et.resourceloader</code></td><td><strong>ET Resource Loader</strong></td><td><code>1.0.0</code></td><td>ET Resource Loader capable of load resource and addressable.</td><td><a href="https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.resourceloader-1.0.0.tgz">.tgz</a></td></tr>
+<tr><td><code>com.nekoniiistudio.et.saveload</code></td><td><strong>ET Saveload</strong></td><td><code>1.1.1</code></td><td>ET saveload.</td><td><a href="https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.saveload-1.1.1.tgz">.tgz</a></td></tr>
+<tr><td><code>com.nekoniiistudio.et.supportkit</code></td><td><strong>ET Support Kit</strong></td><td><code>1.29.5</code></td><td>ET support utilities for runtime use.</td><td><a href="https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.supportkit-1.29.5.tgz">.tgz</a></td></tr>
+<tr><td><code>com.nekoniiistudio.et.uikit</code></td><td><strong>ET UI Kit</strong></td><td><code>1.1.6</code></td><td>ET UI utilities for runtime use. Changelog:
+1.1.6: added sample assets and UISScrollview file rename fix.
+1.1.5: updated UISScrollView with namespace, ScrollRect requirement, serialized field tooltips, and naming cleanup.</td><td><a href="https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.uikit-1.1.6.tgz">.tgz</a></td></tr>
+<tr><td><code>com.nekoniiistudio.et.versioncontrol</code></td><td><strong>ET Version Control</strong></td><td><code>1.0.0</code></td><td>ET Version Control for runtime use.</td><td><a href="https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.versioncontrol-1.0.0.tgz">.tgz</a></td></tr>
+    </tbody>
+  </table>
+</body>
+</html>

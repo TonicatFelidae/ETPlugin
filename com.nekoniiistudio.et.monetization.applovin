@@ -1,0 +1,40 @@
+{
+  "_id": "com.nekoniiistudio.et.monetization.applovin",
+  "name": "com.nekoniiistudio.et.monetization.applovin",
+  "displayName": "ET Monetization AppLovin",
+  "description": "ET AppLovin MAX monetization manager, mediation utilities, ad funnel tracking, and attribution helpers for runtime use.",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "com.nekoniiistudio.et.monetization.applovin",
+      "version": "1.0.0",
+      "displayName": "ET Monetization AppLovin",
+      "description": "ET AppLovin MAX monetization manager, mediation utilities, ad funnel tracking, and attribution helpers for runtime use.",
+      "unity": "2022.3",
+      "author": {
+        "name": "Nekoniii Studio"
+      },
+      "type": "library",
+      "_id": "com.nekoniiistudio.et.monetization.applovin@1.0.0",
+      "readmeFilename": "README.md",
+      "dependencies": {},
+      "dist": {
+        "shasum": "91ad7a5f844728dc479740078ece40db46c83c2a",
+        "integrity": "sha512-MfKsPvu4GfRfQJ68sLGofDGLwZ2aLLdjZtnYO1aU4RfcRrVZcMAIeeTloEdPcQME6AS9Ml6tKGwlN25PUZWs5A==",
+        "tarball": "https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.monetization.applovin-1.0.0.tgz"
+      }
+    }
+  },
+  "time": {
+    "created": "2026-10-18T21:48:03.000Z",
+    "modified": "2026-10-18T21:50:47.000Z",
+    "1.0.0": "2026-10-18T21:50:47.000Z"
+  },
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "readme": "# ET Monetization AppLovin (`com.nekoniiistudio.et.monetization.applovin`)\n\nA production-ready Unity Package Manager (UPM) package providing centralized AppLovin MAX monetization management, ad funnel telemetry, ATT (App Tracking Transparency) gating, and mediation attribution helpers (Adjust, Facebook/Meta SDK, Audience Network).\n\n---\n\n## Features\n\n- **AppLovin MAX Management**:\n  - Full support for Banner (adaptive), Interstitial, Rewarded, and MREC ads.\n  - Safe Area calculation for anchored banners across iOS and Android.\n  - Exponential backoff retry logic for ad preloading.\n  - MREC position conversion between Unity canvas coordinates and AppLovin screen coordinates with dummy overlay previews for Unity Editor.\n  - Server-driven and build-driven test device GAID/IDFA self-registration.\n- **Ad Funnel Analytics & Instrumentation**:\n  - Full funnel event instrumentation (13 standard ad funnel events: load start/success/fail, show request/start/success/fail, reward earned, dismissal, click, revenue impression, banner/mrec display duration).\n  - Decoupled telemetry hook (`AdAnalytics.OnLogEvent`) allowing effortless routing to Firebase Analytics, GameAnalytics, Adjust, Unity Analytics, or custom backends.\n  - Single-line concise console logging (`[Ads] ...`) for debugging on device without third-party dashboards.\n- **Attribution & Consent Management**:\n  - iOS App Tracking Transparency (ATT) lifecycle handler (`AppTracking`) with settle delay and focus timeout before prompt.\n  - Integrated iOS Objective-C ATT bridge (`ETAppTracking.mm`).\n  - Adjust attribution helper (`AdjustManager`) with async ADID retrieval.\n  - Facebook/Meta app-events and session resumption attribution (`FacebookManager`).\n  - Meta Audience Network iOS advertiser tracking flag bridge (`AdSettings`).\n- **Android Resolver Dependencies**:\n  - EDM4U Play Services Ads Identifier XML dependency included for Google Advertising ID (GAID) retrieval in development builds.\n\n---\n\n## Installation\n\n### Via Unity Package Manager (Git URL)\n\nAdd the package to your project's `Packages/manifest.json`:\n\n```json\n{\n  \"dependencies\": {\n    \"com.nekoniiistudio.et.monetization.applovin\": \"https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.monetization.applovin#main\"\n  }\n}\n```\n\nOr install via Unity Package Manager Window:\n1. Open **Window > Package Manager**.\n2. Click **+** > **Add package from git URL...**.\n3. Enter:\n   `https://github.com/TonicatFelidae/ETPlugin.git?path=Packages/com.nekoniiistudio.et.monetization.applovin#main`\n\n---\n\n## Prerequisites & Dependencies\n\n1. **AppLovin MAX Unity SDK** (`com.applovin.mediation.ads`):\n   Configure AppLovin scoped registry in `Packages/manifest.json`:\n   ```json\n   \"scopedRegistries\": [\n     {\n       \"name\": \"AppLovin MAX Unity\",\n       \"url\": \"https://unity.packages.applovin.com/\",\n       \"scopes\": [\n         \"com.applovin.mediation.ads\",\n         \"com.applovin.mediation.adapters\",\n         \"com.applovin.mediation.dsp\"\n       ]\n     }\n   ]\n   ```\n2. **UniTask** (`com.cysharp.unitask`):\n   ```json\n   \"com.cysharp.unitask\": \"https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask\"\n   ```\n3. **External Dependency Manager for Unity (EDM4U)** (`com.google.external-dependency-manager`):\n   Used to resolve Android `play-services-ads-identifier`.\n\n---\n\n## Scripting Define Symbols\n\n| Symbol | Behavior |\n|---|---|\n| `ENABLE_MAX` | Enables AppLovin MAX SDK routines. Automatically defined via `versionDefines` when `com.applovin.mediation.ads` is present in the project. |\n| `ENABLE_ADJUST` | Enables Adjust attribution routines. Automatically defined via `versionDefines` when `com.adjust.sdk` is present. |\n| `ENABLE_FACEBOOK` | Define in Player Settings when Facebook Unity SDK is installed. |\n| `ENABLE_AUDIENCE_NETWORK` | Define in iOS Player Settings when native Meta Audience Network symbols are available. |\n\n---\n\n## Quick Start\n\n### 1. Initialize Ads\n\n```csharp\nusing ET.Monetization;\nusing UnityEngine;\n\npublic class GameInitializer : MonoBehaviour\n{\n    [SerializeField] private ApplovinDummyAds pp_dummyAds;\n\n    private ApplovinMaxManager _maxManager;\n\n    private void Start()\n    {\n        var adData = new ApplovinMaxData\n        {\n            ADS_ID_rewarded = \"YOUR_REWARDED_AD_UNIT_ID\",\n            ADS_ID_interstitial = \"YOUR_INTERSTITIAL_AD_UNIT_ID\",\n            ADS_ID_banner = \"YOUR_BANNER_AD_UNIT_ID\",\n            ADS_ID_MREC = \"YOUR_MREC_AD_UNIT_ID\",\n            InitBanner = true,\n            InitMREC = false\n        };\n\n        _maxManager = new ApplovinMaxManager();\n        _maxManager.Init(adData, this, pp_dummyAds, autoInitializeAds: true);\n    }\n}\n```\n\n### 2. Show Rewarded Ads\n\n```csharp\nif (_maxManager.IsRewardedReady)\n{\n    _maxManager.ShowRewardAds(\n        onCompleted: () => {\n            Debug.Log(\"Reward granted!\");\n        },\n        onFailed: () => {\n            Debug.Log(\"Ad failed or user dismissed before reward.\");\n        },\n        placement: \"shop_double_coins\"\n    );\n}\n```\n\n### 3. Connect Telemetry & Analytics\n\nTo route ad funnel analytics to your telemetry provider (e.g., Firebase Analytics, GameAnalytics):\n\n```csharp\nusing ET.Analytics;\n\n// In your analytics setup or bootstrap:\nAdAnalytics.OnLogEvent += (eventName, parameters) =>\n{\n    // Forward eventName and parameters to your analytics service:\n    // FirebaseAnalytics.LogEvent(eventName, ...);\n};\n```\n\n---\n\n## iOS Configuration\n\nFor iOS builds:\n1. Ensure `NSUserTrackingUsageDescription` is added to your `Info.plist`.\n2. Weak-link `AppTrackingTransparency.framework` in Xcode (`UnityFramework` target).\n",
+  "_attachments": {}
+}

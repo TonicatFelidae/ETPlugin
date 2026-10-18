@@ -1,0 +1,40 @@
+{
+  "_id": "com.nekoniiistudio.et.engine",
+  "name": "com.nekoniiistudio.et.engine",
+  "displayName": "ET Engine",
+  "description": "ET Engine base on zenject for runtime use.",
+  "dist-tags": {
+    "latest": "1.0.5"
+  },
+  "versions": {
+    "1.0.5": {
+      "name": "com.nekoniiistudio.et.engine",
+      "version": "1.0.5",
+      "displayName": "ET Engine",
+      "description": "ET Engine base on zenject for runtime use.",
+      "unity": "2022.3",
+      "author": {
+        "name": "Nekoniii Studio"
+      },
+      "type": "library",
+      "_id": "com.nekoniiistudio.et.engine@1.0.5",
+      "readmeFilename": "README.md",
+      "dependencies": {},
+      "dist": {
+        "shasum": "02a1f142d614348ff061e8c7f8bf4dc75e4348a5",
+        "integrity": "sha512-P3UT9E/RTq1f/B2Dh+/odsDcBt8sYsKvDE51EomQRZDAzrUbTMNyBsUOzoJjecbbMa0txZNQBzD4z4lkaONW/Q==",
+        "tarball": "https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.engine-1.0.5.tgz"
+      }
+    }
+  },
+  "time": {
+    "created": "2026-10-18T21:48:03.000Z",
+    "modified": "2026-10-18T21:50:47.000Z",
+    "1.0.5": "2026-10-18T21:50:47.000Z"
+  },
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "readme": "ET support kit\n",
+  "_attachments": {}
+}

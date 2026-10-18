@@ -1,0 +1,40 @@
+{
+  "_id": "com.nekoniiistudio.et.saveload",
+  "name": "com.nekoniiistudio.et.saveload",
+  "displayName": "ET Saveload",
+  "description": "ET saveload.",
+  "dist-tags": {
+    "latest": "1.1.1"
+  },
+  "versions": {
+    "1.1.1": {
+      "name": "com.nekoniiistudio.et.saveload",
+      "version": "1.1.1",
+      "displayName": "ET Saveload",
+      "description": "ET saveload.",
+      "unity": "2022.3",
+      "author": {
+        "name": "Nekoniii Studio"
+      },
+      "type": "library",
+      "_id": "com.nekoniiistudio.et.saveload@1.1.1",
+      "readmeFilename": "README.md",
+      "dependencies": {},
+      "dist": {
+        "shasum": "4e1d0361abb2cca18b764fc8313a5d9181174b84",
+        "integrity": "sha512-iJGAn9C8LWXcf0aB1pAwaxIJUZbaj29/OEIICLDgte7kBbpoDzBT+8z9hFdjsh2J1NTsAMfMG12YZWOX4loVkQ==",
+        "tarball": "https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.saveload-1.1.1.tgz"
+      }
+    }
+  },
+  "time": {
+    "created": "2026-10-18T21:48:03.000Z",
+    "modified": "2026-10-18T21:50:47.000Z",
+    "1.1.1": "2026-10-18T21:50:47.000Z"
+  },
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "readme": "ET save load\n\n",
+  "_attachments": {}
+}
