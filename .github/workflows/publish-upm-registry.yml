@@ -1,0 +1,54 @@
+name: Publish ETPlugin UPM Scoped Registry
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "Packages/**"
+      - ".github/scripts/build_upm_registry.py"
+      - ".github/workflows/publish-upm-registry.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+
+      - name: Fetch existing gh-pages branch (to preserve previous package versions)
+        run: |
+          if git ls-remote --exit-code --heads origin gh-pages >/dev/null 2>&1; then
+            git fetch origin gh-pages:gh-pages
+            git worktree add _existing_gh_pages gh-pages
+          else
+            mkdir -p _existing_gh_pages
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build static UPM Scoped Registry
+        run: |
+          python3 .github/scripts/build_upm_registry.py \
+            --packages-root Packages \
+            --output-dir _dist_registry \
+            --registry-url "https://tonicatfelidae.github.io/ETPlugin" \
+            --existing-dir _existing_gh_pages
+
+      - name: Deploy to gh-pages branch
+        run: |
+          cd _dist_registry
+          git init
+          git checkout -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore(registry): publish UPM scoped registry"
+          git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
