@@ -1,0 +1,34 @@
+{
+    "name": "ETIAPMonetization",
+    "rootNamespace": "ET.Monetization",
+    "references": [
+        "Unity.Purchasing",
+        "Unity.Purchasing.Stores",
+        "Unity.Purchasing.Codeless",
+        "Unity.Purchasing.Utilities",
+        "Unity.Services.Core",
+        "UniTask",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.purchasing",
+            "expression": "",
+            "define": "ENABLE_UNITY_IAP"
+        },
+        {
+            "name": "com.unity.purchasing",
+            "expression": "5.0.0",
+            "define": "ENABLE_UNITY_IAP_V5"
+        }
+    ],
+    "noEngineReferences": false
+}

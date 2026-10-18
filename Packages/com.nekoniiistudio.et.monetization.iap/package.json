@@ -1,0 +1,11 @@
+{
+  "name": "com.nekoniiistudio.et.monetization.iap",
+  "version": "1.0.0",
+  "displayName": "ET Monetization In-App Purchasing",
+  "description": "ET In-App Purchasing (Unity IAP v5+) manager, cross-product entitlement resolver, reactive UI button, and funnel telemetry ready for multiple project integration as a git package.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "type": "library"
+}
