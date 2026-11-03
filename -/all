@@ -1,5 +1,5 @@
 {
-  "_updated": 1792360247556,
+  "_updated": 1793677552750,
   "com.nekoniiistudio.et.devtools": {
     "name": "com.nekoniiistudio.et.devtools",
     "displayName": "ET Dev Tools",
@@ -15,8 +15,8 @@
     },
     "time": {
       "created": "2026-10-18T21:48:03.000Z",
-      "modified": "2026-10-18T21:50:47.000Z",
-      "1.0.0": "2026-10-18T21:50:47.000Z"
+      "modified": "2026-11-03T03:45:52.000Z",
+      "1.0.0": "2026-11-03T03:45:52.000Z"
     }
   },
   "com.nekoniiistudio.et.dialogue": {
@@ -34,8 +34,27 @@
     },
     "time": {
       "created": "2026-10-18T21:48:03.000Z",
-      "modified": "2026-10-18T21:50:47.000Z",
-      "1.0.5": "2026-10-18T21:50:47.000Z"
+      "modified": "2026-11-03T03:45:52.000Z",
+      "1.0.5": "2026-11-03T03:45:52.000Z"
+    }
+  },
+  "com.nekoniiistudio.et.effectkit": {
+    "name": "com.nekoniiistudio.et.effectkit",
+    "displayName": "ET Effect Kit",
+    "description": "ET Claim Effect and UI Particle systems for animated resource rewards.",
+    "author": {
+      "name": "Nekoniii Studio"
+    },
+    "dist-tags": {
+      "latest": "1.0.0"
+    },
+    "versions": {
+      "1.0.0": "latest"
+    },
+    "time": {
+      "created": "2026-11-03T03:45:52.000Z",
+      "modified": "2026-11-03T03:45:52.000Z",
+      "1.0.0": "2026-11-03T03:45:52.000Z"
     }
   },
   "com.nekoniiistudio.et.engine": {
@@ -53,8 +72,8 @@
     },
     "time": {
       "created": "2026-10-18T21:48:03.000Z",
-      "modified": "2026-10-18T21:50:47.000Z",
-      "1.0.5": "2026-10-18T21:50:47.000Z"
+      "modified": "2026-11-03T03:45:52.000Z",
+      "1.0.5": "2026-11-03T03:45:52.000Z"
     }
   },
   "com.nekoniiistudio.et.inputmanager": {
@@ -72,8 +91,8 @@
     },
     "time": {
       "created": "2026-10-18T21:48:03.000Z",
-      "modified": "2026-10-18T21:50:47.000Z",
-      "1.0.0": "2026-10-18T21:50:47.000Z"
+      "modified": "2026-11-03T03:45:52.000Z",
+      "1.0.0": "2026-11-03T03:45:52.000Z"
     }
   },
   "com.nekoniiistudio.et.mobilekit": {
@@ -91,8 +110,8 @@
     },
     "time": {
       "created": "2026-10-18T21:48:03.000Z",
-      "modified": "2026-10-18T21:50:47.000Z",
-      "1.0.1": "2026-10-18T21:50:47.000Z"
+      "modified": "2026-11-03T03:45:52.000Z",
+      "1.0.1": "2026-11-03T03:45:52.000Z"
     }
   },
   "com.nekoniiistudio.et.monetization.applovin": {
@@ -110,8 +129,8 @@
     },
     "time": {
       "created": "2026-10-18T21:48:03.000Z",
-      "modified": "2026-10-18T21:50:47.000Z",
-      "1.0.0": "2026-10-18T21:50:47.000Z"
+      "modified": "2026-11-03T03:45:52.000Z",
+      "1.0.0": "2026-11-03T03:45:52.000Z"
     }
   },
   "com.nekoniiistudio.et.monetization.googleads": {
@@ -129,8 +148,8 @@
     },
     "time": {
       "created": "2026-10-18T21:48:03.000Z",
-      "modified": "2026-10-18T21:50:47.000Z",
-      "1.0.0": "2026-10-18T21:50:47.000Z"
+      "modified": "2026-11-03T03:45:52.000Z",
+      "1.0.0": "2026-11-03T03:45:52.000Z"
     }
   },
   "com.nekoniiistudio.et.monetization.iap": {
@@ -148,8 +167,8 @@
     },
     "time": {
       "created": "2026-10-18T21:48:03.000Z",
-      "modified": "2026-10-18T21:50:47.000Z",
-      "1.0.0": "2026-10-18T21:50:47.000Z"
+      "modified": "2026-11-03T03:45:52.000Z",
+      "1.0.0": "2026-11-03T03:45:52.000Z"
     }
   },
   "com.nekoniiistudio.et.resourceloader": {
@@ -167,8 +186,8 @@
     },
     "time": {
       "created": "2026-10-18T21:48:03.000Z",
-      "modified": "2026-10-18T21:50:47.000Z",
-      "1.0.0": "2026-10-18T21:50:47.000Z"
+      "modified": "2026-11-03T03:45:52.000Z",
+      "1.0.0": "2026-11-03T03:45:52.000Z"
     }
   },
   "com.nekoniiistudio.et.saveload": {
@@ -186,8 +205,8 @@
     },
     "time": {
       "created": "2026-10-18T21:48:03.000Z",
-      "modified": "2026-10-18T21:50:47.000Z",
-      "1.1.1": "2026-10-18T21:50:47.000Z"
+      "modified": "2026-11-03T03:45:52.000Z",
+      "1.1.1": "2026-11-03T03:45:52.000Z"
     }
   },
   "com.nekoniiistudio.et.supportkit": {
@@ -205,8 +224,8 @@
     },
     "time": {
       "created": "2026-10-18T21:48:03.000Z",
-      "modified": "2026-10-18T21:50:47.000Z",
-      "1.29.5": "2026-10-18T21:50:47.000Z"
+      "modified": "2026-11-03T03:45:52.000Z",
+      "1.29.5": "2026-11-03T03:45:52.000Z"
     }
   },
   "com.nekoniiistudio.et.uikit": {
@@ -224,8 +243,8 @@
     },
     "time": {
       "created": "2026-10-18T21:48:03.000Z",
-      "modified": "2026-10-18T21:50:47.000Z",
-      "1.1.6": "2026-10-18T21:50:47.000Z"
+      "modified": "2026-11-03T03:45:52.000Z",
+      "1.1.6": "2026-11-03T03:45:52.000Z"
     }
   },
   "com.nekoniiistudio.et.versioncontrol": {
@@ -243,8 +262,8 @@
     },
     "time": {
       "created": "2026-10-18T21:48:03.000Z",
-      "modified": "2026-10-18T21:50:47.000Z",
-      "1.0.0": "2026-10-18T21:50:47.000Z"
+      "modified": "2026-11-03T03:45:52.000Z",
+      "1.0.0": "2026-11-03T03:45:52.000Z"
     }
   }
 }

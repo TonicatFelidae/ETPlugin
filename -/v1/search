@@ -12,7 +12,7 @@
           "nekoniiistudio",
           "unity"
         ],
-        "date": "2026-10-18T21:50:47.000Z",
+        "date": "2026-11-03T03:45:52.000Z",
         "author": {
           "name": "Nekoniii Studio"
         },
@@ -52,7 +52,7 @@
           "nekoniiistudio",
           "unity"
         ],
-        "date": "2026-10-18T21:50:47.000Z",
+        "date": "2026-11-03T03:45:52.000Z",
         "author": {
           "name": "Nekoniii Studio"
         },
@@ -82,6 +82,46 @@
     },
     {
       "package": {
+        "name": "com.nekoniiistudio.et.effectkit",
+        "scope": "unscoped",
+        "version": "1.0.0",
+        "displayName": "ET Effect Kit",
+        "description": "ET Claim Effect and UI Particle systems for animated resource rewards.",
+        "keywords": [
+          "et",
+          "nekoniiistudio",
+          "unity"
+        ],
+        "date": "2026-11-03T03:45:52.000Z",
+        "author": {
+          "name": "Nekoniii Studio"
+        },
+        "publisher": {
+          "name": "Nekoniii Studio"
+        },
+        "maintainers": [
+          {
+            "name": "Nekoniii Studio"
+          }
+        ],
+        "links": {
+          "npm": "https://tonicatfelidae.github.io/ETPlugin/com.nekoniiistudio.et.effectkit",
+          "homepage": "https://github.com/TonicatFelidae/ETPlugin",
+          "repository": "https://github.com/TonicatFelidae/ETPlugin.git"
+        }
+      },
+      "score": {
+        "final": 1.0,
+        "detail": {
+          "quality": 1.0,
+          "popularity": 1.0,
+          "maintenance": 1.0
+        }
+      },
+      "searchScore": 1.0
+    },
+    {
+      "package": {
         "name": "com.nekoniiistudio.et.engine",
         "scope": "unscoped",
         "version": "1.0.5",
@@ -92,7 +132,7 @@
           "nekoniiistudio",
           "unity"
         ],
-        "date": "2026-10-18T21:50:47.000Z",
+        "date": "2026-11-03T03:45:52.000Z",
         "author": {
           "name": "Nekoniii Studio"
         },
@@ -132,7 +172,7 @@
           "nekoniiistudio",
           "unity"
         ],
-        "date": "2026-10-18T21:50:47.000Z",
+        "date": "2026-11-03T03:45:52.000Z",
         "author": {
           "name": "Nekoniii Studio"
         },
@@ -172,7 +212,7 @@
           "nekoniiistudio",
           "unity"
         ],
-        "date": "2026-10-18T21:50:47.000Z",
+        "date": "2026-11-03T03:45:52.000Z",
         "author": {
           "name": "Nekoniii Studio"
         },
@@ -212,7 +252,7 @@
           "nekoniiistudio",
           "unity"
         ],
-        "date": "2026-10-18T21:50:47.000Z",
+        "date": "2026-11-03T03:45:52.000Z",
         "author": {
           "name": "Nekoniii Studio"
         },
@@ -252,7 +292,7 @@
           "nekoniiistudio",
           "unity"
         ],
-        "date": "2026-10-18T21:50:47.000Z",
+        "date": "2026-11-03T03:45:52.000Z",
         "author": {
           "name": "Nekoniii Studio"
         },
@@ -292,7 +332,7 @@
           "nekoniiistudio",
           "unity"
         ],
-        "date": "2026-10-18T21:50:47.000Z",
+        "date": "2026-11-03T03:45:52.000Z",
         "author": {
           "name": "Nekoniii Studio"
         },
@@ -332,7 +372,7 @@
           "nekoniiistudio",
           "unity"
         ],
-        "date": "2026-10-18T21:50:47.000Z",
+        "date": "2026-11-03T03:45:52.000Z",
         "author": {
           "name": "Nekoniii Studio"
         },
@@ -372,7 +412,7 @@
           "nekoniiistudio",
           "unity"
         ],
-        "date": "2026-10-18T21:50:47.000Z",
+        "date": "2026-11-03T03:45:52.000Z",
         "author": {
           "name": "Nekoniii Studio"
         },
@@ -412,7 +452,7 @@
           "nekoniiistudio",
           "unity"
         ],
-        "date": "2026-10-18T21:50:47.000Z",
+        "date": "2026-11-03T03:45:52.000Z",
         "author": {
           "name": "Nekoniii Studio"
         },
@@ -452,7 +492,7 @@
           "nekoniiistudio",
           "unity"
         ],
-        "date": "2026-10-18T21:50:47.000Z",
+        "date": "2026-11-03T03:45:52.000Z",
         "author": {
           "name": "Nekoniii Studio"
         },
@@ -492,7 +532,7 @@
           "nekoniiistudio",
           "unity"
         ],
-        "date": "2026-10-18T21:50:47.000Z",
+        "date": "2026-11-03T03:45:52.000Z",
         "author": {
           "name": "Nekoniii Studio"
         },
@@ -521,6 +561,6 @@
       "searchScore": 1.0
     }
   ],
-  "total": 13,
-  "time": "2026-10-18T21:50:47.000Z"
+  "total": 14,
+  "time": "2026-11-03T03:45:52.000Z"
 }

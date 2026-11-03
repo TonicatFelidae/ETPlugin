@@ -21,16 +21,16 @@
       "readmeFilename": "README.md",
       "dependencies": {},
       "dist": {
-        "shasum": "91ad7a5f844728dc479740078ece40db46c83c2a",
-        "integrity": "sha512-MfKsPvu4GfRfQJ68sLGofDGLwZ2aLLdjZtnYO1aU4RfcRrVZcMAIeeTloEdPcQME6AS9Ml6tKGwlN25PUZWs5A==",
+        "shasum": "bc8ff04a78e2c19ad869f66bcb8d92438b8010c7",
+        "integrity": "sha512-raB5ZIjWleqAE00N7KROU8eZEP2oHnwXgkALdxYidiW+rXPLRJhWfCSqbE2YXk65WxBFN58i/dw9ruQslyWEpw==",
         "tarball": "https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.monetization.applovin-1.0.0.tgz"
       }
     }
   },
   "time": {
     "created": "2026-10-18T21:48:03.000Z",
-    "modified": "2026-10-18T21:50:47.000Z",
-    "1.0.0": "2026-10-18T21:50:47.000Z"
+    "modified": "2026-11-03T03:45:52.000Z",
+    "1.0.0": "2026-11-03T03:45:52.000Z"
   },
   "author": {
     "name": "Nekoniii Studio"
