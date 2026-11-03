@@ -1,0 +1,21 @@
+{
+  "name": "com.nekoniiistudio.et.effectkit",
+  "version": "1.0.0",
+  "displayName": "ET Effect Kit",
+  "description": "ET Claim Effect and UI Particle systems for animated resource rewards.",
+  "unity": "2022.3",
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "type": "library",
+  "dependencies": {
+    "com.unity.ugui": "2.0.0"
+  },
+  "samples": [
+    {
+      "displayName": "Basic Sample",
+      "description": "Sample scene demonstrating claim effect animations and UI resource destinations.",
+      "path": "Sample"
+    }
+  ]
+}
