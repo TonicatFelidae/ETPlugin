@@ -1,0 +1,40 @@
+{
+  "_id": "com.nekoniiistudio.et.inputmanager",
+  "name": "com.nekoniiistudio.et.inputmanager",
+  "displayName": "ET Input Manager",
+  "description": "ET Input Manager for runtime use.",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "com.nekoniiistudio.et.inputmanager",
+      "version": "1.0.0",
+      "displayName": "ET Input Manager",
+      "description": "ET Input Manager for runtime use.",
+      "unity": "2022.3",
+      "author": {
+        "name": "Nekoniii Studio"
+      },
+      "type": "library",
+      "_id": "com.nekoniiistudio.et.inputmanager@1.0.0",
+      "readmeFilename": "README.md",
+      "dependencies": {},
+      "dist": {
+        "shasum": "f050f6721b6c93746d43bcf8caf8d95f172c42c8",
+        "integrity": "sha512-g4fl0O3m5FNC9qThwTOnI40MpKhHFDXzIi9cg7jgmogEjgj6deYHeH79yOkPuMRchpGy9cOcQ+bVda2kmD9c/Q==",
+        "tarball": "https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.inputmanager-1.0.0.tgz"
+      }
+    }
+  },
+  "time": {
+    "created": "2026-10-18T21:48:03.000Z",
+    "modified": "2026-11-03T03:45:52.000Z",
+    "1.0.0": "2026-11-03T03:45:52.000Z"
+  },
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "readme": "ET support kit\n",
+  "_attachments": {}
+}

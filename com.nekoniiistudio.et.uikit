@@ -1,0 +1,40 @@
+{
+  "_id": "com.nekoniiistudio.et.uikit",
+  "name": "com.nekoniiistudio.et.uikit",
+  "displayName": "ET UI Kit",
+  "description": "ET UI utilities for runtime use. Changelog:\n1.1.6: added sample assets and UISScrollview file rename fix.\n1.1.5: updated UISScrollView with namespace, ScrollRect requirement, serialized field tooltips, and naming cleanup.",
+  "dist-tags": {
+    "latest": "1.1.6"
+  },
+  "versions": {
+    "1.1.6": {
+      "name": "com.nekoniiistudio.et.uikit",
+      "version": "1.1.6",
+      "displayName": "ET UI Kit",
+      "description": "ET UI utilities for runtime use. Changelog:\n1.1.6: added sample assets and UISScrollview file rename fix.\n1.1.5: updated UISScrollView with namespace, ScrollRect requirement, serialized field tooltips, and naming cleanup.",
+      "unity": "2022.3",
+      "author": {
+        "name": "Nekoniii Studio"
+      },
+      "type": "library",
+      "_id": "com.nekoniiistudio.et.uikit@1.1.6",
+      "readmeFilename": "README.md",
+      "dependencies": {},
+      "dist": {
+        "shasum": "b8764cbeb73946ba33e437888c90661d25b19eec",
+        "integrity": "sha512-n1Hfrb1d+pZe6LsvlAg237Oqw3D76tWA2M29ucsgiQbJqmDQlMNfNIma1o8mgqzq8GweOCYeDcaV+4GVca9LpQ==",
+        "tarball": "https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.uikit-1.1.6.tgz"
+      }
+    }
+  },
+  "time": {
+    "created": "2026-10-18T21:48:03.000Z",
+    "modified": "2026-11-03T03:45:52.000Z",
+    "1.1.6": "2026-11-03T03:45:52.000Z"
+  },
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "readme": "ET support kit\n",
+  "_attachments": {}
+}

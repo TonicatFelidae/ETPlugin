@@ -1,0 +1,40 @@
+{
+  "_id": "com.nekoniiistudio.et.resourceloader",
+  "name": "com.nekoniiistudio.et.resourceloader",
+  "displayName": "ET Resource Loader",
+  "description": "ET Resource Loader capable of load resource and addressable.",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "com.nekoniiistudio.et.resourceloader",
+      "version": "1.0.0",
+      "displayName": "ET Resource Loader",
+      "description": "ET Resource Loader capable of load resource and addressable.",
+      "unity": "2022.3",
+      "author": {
+        "name": "Nekoniii Studio"
+      },
+      "type": "library",
+      "_id": "com.nekoniiistudio.et.resourceloader@1.0.0",
+      "readmeFilename": "README.md",
+      "dependencies": {},
+      "dist": {
+        "shasum": "bea6fcabafcd850c5c60c779eec5c02f28419cc7",
+        "integrity": "sha512-/Qx5BgOj4ZXjro6ENNbKPc7lagzzcP/K/DRsQw6PhaxINPXP5EVRhw1DPgC9GyUBocFX+cFNiZbw+HI19tHOrw==",
+        "tarball": "https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.resourceloader-1.0.0.tgz"
+      }
+    }
+  },
+  "time": {
+    "created": "2026-10-18T21:48:03.000Z",
+    "modified": "2026-11-03T03:45:52.000Z",
+    "1.0.0": "2026-11-03T03:45:52.000Z"
+  },
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "readme": "ET resource loader\n",
+  "_attachments": {}
+}

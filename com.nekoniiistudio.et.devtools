@@ -1,0 +1,40 @@
+{
+  "_id": "com.nekoniiistudio.et.devtools",
+  "name": "com.nekoniiistudio.et.devtools",
+  "displayName": "ET Dev Tools",
+  "description": "ET Dev Tools for runtime use.",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "com.nekoniiistudio.et.devtools",
+      "version": "1.0.0",
+      "displayName": "ET Dev Tools",
+      "description": "ET Dev Tools for runtime use.",
+      "unity": "2022.3",
+      "author": {
+        "name": "Nekoniii Studio"
+      },
+      "type": "library",
+      "_id": "com.nekoniiistudio.et.devtools@1.0.0",
+      "readmeFilename": "README.md",
+      "dependencies": {},
+      "dist": {
+        "shasum": "49754a666877c797f158742fa0628d1a5483f45f",
+        "integrity": "sha512-EE851j51muPoWqSlf6zxPr/aDf+/6pPAXGSfKRZw5SzP5eSGmvWp4SnrUR59O6iuJsj405m7X9PbjNf+Pq2XaA==",
+        "tarball": "https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.devtools-1.0.0.tgz"
+      }
+    }
+  },
+  "time": {
+    "created": "2026-10-18T21:48:03.000Z",
+    "modified": "2026-11-03T03:45:52.000Z",
+    "1.0.0": "2026-11-03T03:45:52.000Z"
+  },
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "readme": "ET dev tools\n",
+  "_attachments": {}
+}

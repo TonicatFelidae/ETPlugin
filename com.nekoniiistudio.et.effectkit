@@ -1,0 +1,49 @@
+{
+  "_id": "com.nekoniiistudio.et.effectkit",
+  "name": "com.nekoniiistudio.et.effectkit",
+  "displayName": "ET Effect Kit",
+  "description": "ET Claim Effect and UI Particle systems for animated resource rewards.",
+  "dist-tags": {
+    "latest": "1.0.0"
+  },
+  "versions": {
+    "1.0.0": {
+      "name": "com.nekoniiistudio.et.effectkit",
+      "version": "1.0.0",
+      "displayName": "ET Effect Kit",
+      "description": "ET Claim Effect and UI Particle systems for animated resource rewards.",
+      "unity": "2022.3",
+      "author": {
+        "name": "Nekoniii Studio"
+      },
+      "type": "library",
+      "dependencies": {
+        "com.unity.ugui": "2.0.0"
+      },
+      "samples": [
+        {
+          "displayName": "Basic Sample",
+          "description": "Sample scene demonstrating claim effect animations and UI resource destinations.",
+          "path": "Sample"
+        }
+      ],
+      "_id": "com.nekoniiistudio.et.effectkit@1.0.0",
+      "readmeFilename": "README.md",
+      "dist": {
+        "shasum": "7315d7330ab83351545e9636e4677c289e0457b6",
+        "integrity": "sha512-6yKozCD6Ar2z47SJwjE8rNb2/X8XZt8ihw8Zfq7A66scaKXTjZbW1B36HAYU77WdLP2UTIfOGiLUWe6hMJiGSw==",
+        "tarball": "https://raw.githubusercontent.com/TonicatFelidae/ETPlugin/gh-pages/tarballs/com.nekoniiistudio.et.effectkit-1.0.0.tgz"
+      }
+    }
+  },
+  "time": {
+    "created": "2026-11-03T03:45:52.000Z",
+    "modified": "2026-11-03T03:45:52.000Z",
+    "1.0.0": "2026-11-03T03:45:52.000Z"
+  },
+  "author": {
+    "name": "Nekoniii Studio"
+  },
+  "readme": "# ET Effect Kit\n\ntags: #unity, #effect, #plugin, #claim-effect, #ui-particles\n\n## References\n- [ET Plugin Structure](Plugin%20Structure.md)\n- [ET Class Architecture](ET%20Class%20Architecture.md)\n\n---\n\n## Overview\n**ET Effect Kit** (`com.nekoniiistudio.et.effectkit`) provides high-performance, polished UI particle effects for currency, gem, and item claim animations. It features two-phase particle physics (burst spread followed by back-eased homing trajectory to HUD destination icons), animated counter syncing, and multi-reward playback.\n\n## Features\n- **Two-Phase Particle Movement**:\n  - *Phase 1 (Burst)*: Decelerating outward burst (`EaseOutCubic`) evenly distributed across a ring.\n  - *Phase 2 (Fly)*: Back-easing flight paths (`InBack`, `InOutBack`, `OutBack`) with customizable overshoot.\n- **Dynamic Icon Sizing**: Particles smoothly scale to match HUD destination icon dimensions on arrival.\n- **Counter Synchronization**: Pure-function clamped step counter (`NextChangeValue`) preventing counter underflow.\n- **Concurrent Playback**: Supports multiple simultaneous claim effects (`Play`, `PlayAdditive`) without interrupting in-flight particles.\n- **Lag & Resume Spike Protection**: `ClampSimulationDelta` in `UIParticleSystem` protects against massive frame spikes after fullscreen ads or pause resumption.\n\n## Package Structure\n```text\ncom.nekoniiistudio.et.effectkit/\n\u251c\u2500\u2500 package.json\n\u251c\u2500\u2500 README.md\n\u251c\u2500\u2500 Runtime/\n\u2502   \u2514\u2500\u2500 ETClaimEffect/\n\u2502       \u2514\u2500\u2500 Script/\n\u2502           \u251c\u2500\u2500 ETClaimEffectMain.cs\n\u2502           \u251c\u2500\u2500 PopupRewardParticle.cs\n\u2502           \u251c\u2500\u2500 PopupRewardParticleSetting.cs\n\u2502           \u251c\u2500\u2500 ClaimResourceData.cs\n\u2502           \u251c\u2500\u2500 UIResourceDestinationItem.cs\n\u2502           \u251c\u2500\u2500 IUIResourceDestinationItem.cs\n\u2502           \u251c\u2500\u2500 SupportExtension.cs\n\u2502           \u251c\u2500\u2500 UIParticleSystem.cs\n\u2502           \u2514\u2500\u2500 ETClaimEffect.asmdef\n\u251c\u2500\u2500 Editor/\n\u2502   \u2514\u2500\u2500 ETClaimEffect/\n\u2502       \u2514\u2500\u2500 Script/\n\u2502           \u251c\u2500\u2500 ETClaimEffectMainEditor.cs\n\u2502           \u2514\u2500\u2500 ETClaimEffect.Editor.asmdef\n\u2514\u2500\u2500 Sample/\n    \u251c\u2500\u2500 ClaimEffectScene.unity\n    \u251c\u2500\u2500 ClaimEffectExample.cs\n    \u251c\u2500\u2500 CurrencyRewardHandlerSample.cs\n    \u251c\u2500\u2500 resourceAnimationSimpleAsset.png\n    \u251c\u2500\u2500 PopIcon.anim\n    \u251c\u2500\u2500 Res1.controller\n    \u251c\u2500\u2500 Readme.txt\n    \u251c\u2500\u2500 BaseRewardParticle.prefab\n    \u251c\u2500\u2500 BaseRewardParticle_Overlay.prefab\n    \u251c\u2500\u2500 Prefabs/\n    \u2502   \u2514\u2500\u2500 ClaimEffectExample.prefab\n    \u251c\u2500\u2500 Data/\n    \u2502   \u251c\u2500\u2500 ClaimResource_1.asset ... ClaimResource_5.asset\n    \u2502   \u2514\u2500\u2500 RewardParticleSetting.asset\n    \u251c\u2500\u2500 Material/\n    \u2514\u2500\u2500 Texture/\n```\n\n## Quick Start\n1. Attach `ETClaimEffectMain` to a UI manager or canvas object.\n2. Configure resource mappings and particle prefabs in `ETClaimEffectData`.\n3. Call `ETClaimEffectMain.Play(resourceID, amount)` or `ETClaimEffectMain.PlayAdditive(...)`.\n",
+  "_attachments": {}
+}
