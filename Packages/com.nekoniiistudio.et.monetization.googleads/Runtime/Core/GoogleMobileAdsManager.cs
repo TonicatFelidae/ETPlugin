@@ -7,7 +7,6 @@ using UnityEngine.Events;
 
 #if ENABLE_GOOGLE_ADS
 using GoogleMobileAds.Api;
-using GoogleMobileAds.Common;
 #endif
 
 namespace ET.Monetization
@@ -146,7 +145,6 @@ namespace ET.Monetization
         {
 #if ENABLE_GOOGLE_ADS
             string unitId = TestAdUnits.ResolveBannerUnitId(_data.UseTestAds, _data.BannerUnitIdAndroid, _data.BannerUnitIdIOS);
-            Debug.Log($"[GoogleMobileAdsManager] LoadBanner requested: placement='{placement}', unitId='{unitId}', UseTestAds={_data.UseTestAds}, Adaptive={_data.AdaptiveBanner}");
             _funnelBanner.TrackLoadRequest(unitId);
 
             if (_bannerView != null)
@@ -154,71 +152,41 @@ namespace ET.Monetization
                 DestroyBanner();
             }
 
-            AdSize adSize;
-            if (_data.AdaptiveBanner)
-            {
-                int deviceWidth = MobileAds.Utils.GetDeviceSafeWidth();
-                if (deviceWidth <= 0)
-                {
-                    float dpi = Screen.dpi > 0 ? Screen.dpi : 160f;
-                    deviceWidth = Mathf.RoundToInt(Screen.width / (dpi / 160f));
-                }
-                if (deviceWidth <= 0) deviceWidth = 320;
-                adSize = AdSize.GetCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(deviceWidth);
-            }
-            else
-            {
-                adSize = AdSize.Banner;
-            }
+            AdSize adSize = _data.AdaptiveBanner
+                ? AdSize.GetCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(AdSize.FullWidth)
+                : AdSize.Banner;
 
             AdPosition position = GoogleAdsUtils.ConvertPosition(_data.BannerPosition);
             _bannerView = new BannerView(unitId, adSize, position);
 
             _bannerView.OnBannerAdLoaded += () =>
             {
-                MobileAdsEventExecutor.ExecuteInUpdate(() =>
-                {
-                    Debug.Log($"[GoogleMobileAdsManager] Banner loaded successfully. UnitId: {unitId}");
-                    _funnelBanner.TrackLoaded(unitId);
-                    UpdateBannerSafeArea();
-                    OnBannerLoaded?.Invoke();
-                });
+                _funnelBanner.TrackLoaded(unitId);
+                UpdateBannerSafeArea();
+                OnBannerLoaded?.Invoke();
             };
 
             _bannerView.OnBannerAdLoadFailed += (LoadAdError error) =>
             {
-                MobileAdsEventExecutor.ExecuteInUpdate(() =>
-                {
-                    Debug.LogError($"[GoogleMobileAdsManager] Banner failed to load. UnitId: {unitId}, ErrorCode: {error?.GetCode()}, Message: {error?.GetMessage()}");
-                    _funnelBanner.TrackLoadFailed(unitId, error?.GetCode() ?? -1, error?.GetMessage() ?? "Unknown error");
-                    OnBannerFailed?.Invoke();
-                });
+                _funnelBanner.TrackLoadFailed(unitId, error?.GetCode() ?? -1, error?.GetMessage() ?? "Unknown error");
+                OnBannerFailed?.Invoke();
             };
 
             _bannerView.OnAdPaid += (AdValue adValue) =>
             {
-                MobileAdsEventExecutor.ExecuteInUpdate(() =>
-                {
-                    double revenue = adValue.Value / 1000000.0;
-                    _funnelBanner.TrackImpression(revenue, adValue.CurrencyCode, adValue.Precision.ToString());
-                    OnAdImpression?.Invoke("banner", revenue, adValue.CurrencyCode);
-                });
+                double revenue = adValue.Value / 1000000.0;
+                _funnelBanner.TrackImpression(revenue, adValue.CurrencyCode, adValue.Precision.ToString());
+                OnAdImpression?.Invoke("banner", revenue, adValue.CurrencyCode);
             };
 
             _bannerView.OnAdImpressionRecorded += () =>
             {
-                MobileAdsEventExecutor.ExecuteInUpdate(() =>
-                {
-                    _funnelBanner.TrackDisplayStart();
-                });
+                _funnelBanner.TrackDisplayStart();
             };
 
             _bannerView.OnAdClicked += () =>
             {
-                MobileAdsEventExecutor.ExecuteInUpdate(() =>
-                {
-                    _funnelBanner.TrackClicked();
-                });
+                _funnelBanner.TrackClicked();
             };
 
             _bannerView.LoadAd(new AdRequest());
@@ -234,27 +202,6 @@ namespace ET.Monetization
             _funnelBanner.TrackShowRequest(placement);
 
 #if ENABLE_GOOGLE_ADS
-            if (!_isInitialized)
-            {
-                Debug.Log("[GoogleMobileAdsManager] ShowBanner called before SDK initialization. Initializing MobileAds SDK first...");
-                Initialize(null, () =>
-                {
-                    if (_isBannerShowing)
-                    {
-                        if (_bannerView == null)
-                        {
-                            LoadBanner(placement);
-                        }
-                        else
-                        {
-                            _bannerView.Show();
-                            UpdateBannerSafeArea();
-                        }
-                    }
-                });
-                return;
-            }
-
             if (_bannerView == null)
             {
                 LoadBanner(placement);
@@ -324,14 +271,6 @@ namespace ET.Monetization
             }
 
             float heightInPixels = _bannerView.GetHeightInPixels();
-#if UNITY_EDITOR
-            if (heightInPixels <= 0f && _isBannerShowing)
-            {
-                float dpi = Screen.dpi > 0 ? Screen.dpi : 160f;
-                heightInPixels = 50f * (dpi / 160f);
-            }
-#endif
-            Debug.Log($"[GoogleMobileAdsManager] UpdateBannerSafeArea: heightInPixels = {heightInPixels}, position = {_data.BannerPosition}");
             if (_data.BannerPosition == GoogleBannerPosition.Top ||
                 _data.BannerPosition == GoogleBannerPosition.TopLeft ||
                 _data.BannerPosition == GoogleBannerPosition.TopRight)
