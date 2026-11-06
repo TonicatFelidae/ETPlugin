@@ -22,6 +22,7 @@ namespace ET.Monetization
             {
                 if (Mathf.Approximately(_bottomAdsHeight, value)) return;
                 _bottomAdsHeight = value;
+                Debug.Log($"[GoogleAdsSafeAreaHelper] BottomAdsHeight changed to {_bottomAdsHeight}. Invoking OnBottomAdsHeightChanged.");
                 OnBottomAdsHeightChanged?.Invoke();
             }
         }
@@ -33,6 +34,7 @@ namespace ET.Monetization
             {
                 if (Mathf.Approximately(_topAdsHeight, value)) return;
                 _topAdsHeight = value;
+                Debug.Log($"[GoogleAdsSafeAreaHelper] TopAdsHeight changed to {_topAdsHeight}. Invoking OnTopAdsHeightChanged.");
                 OnTopAdsHeightChanged?.Invoke();
             }
         }
