@@ -50,6 +50,10 @@ namespace ET.Monetization
         [Tooltip("Optional Apple App Store product ID override. Leave empty to use productId.")]
         public string appleAppStoreId;
 
+        [Header("Regional Pricing Tag")]
+        [Tooltip("Standardized pricing tier tag for Google Play & Apple App Store predefined regional prices.")]
+        public IAPPriceTag priceTag = IAPPriceTag.tag_0_99;
+
         [Header("Fallback Display Metadata")]
         [Tooltip("Fallback localized price string before store metadata is fetched.")]
         public string defaultPriceString = "$0.99";
